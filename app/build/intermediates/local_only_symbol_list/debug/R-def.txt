@@ -1,0 +1,26 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color dockbar_bg
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+id btn_app_manager
+id btn_config_music
+id btn_config_nav
+id btn_config_phone
+id btn_config_settings
+id btn_music
+id btn_nav
+id btn_phone
+id btn_restart_service
+id btn_settings
+layout activity_main
+layout floating_dockbar
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme.HydrogenDockBar

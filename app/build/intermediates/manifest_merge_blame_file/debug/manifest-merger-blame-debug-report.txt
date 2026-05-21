@@ -1,0 +1,122 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.hydrogen.dockbar"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:5:5-78
+11-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:5:22-75
+12    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+12-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:6:5-81
+12-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:6:22-78
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+13-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:7:5-80
+13-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:7:22-77
+14
+15    <permission
+15-->[androidx.core:core:1.9.0] D:\dev2026\Gradle_Home\caches\8.9\transforms\cddf55454b0466f7457ed22b2824534d\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+16        android:name="com.hydrogen.dockbar.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+16-->[androidx.core:core:1.9.0] D:\dev2026\Gradle_Home\caches\8.9\transforms\cddf55454b0466f7457ed22b2824534d\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+17        android:protectionLevel="signature" />
+17-->[androidx.core:core:1.9.0] D:\dev2026\Gradle_Home\caches\8.9\transforms\cddf55454b0466f7457ed22b2824534d\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+18
+19    <uses-permission android:name="com.hydrogen.dockbar.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+19-->[androidx.core:core:1.9.0] D:\dev2026\Gradle_Home\caches\8.9\transforms\cddf55454b0466f7457ed22b2824534d\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+19-->[androidx.core:core:1.9.0] D:\dev2026\Gradle_Home\caches\8.9\transforms\cddf55454b0466f7457ed22b2824534d\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+20
+21    <application
+21-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:9:5-42:19
+22        android:allowBackup="true"
+22-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:10:9-35
+23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+23-->[androidx.core:core:1.9.0] D:\dev2026\Gradle_Home\caches\8.9\transforms\cddf55454b0466f7457ed22b2824534d\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+24        android:debuggable="true"
+25        android:extractNativeLibs="true"
+26        android:icon="@android:mipmap/sym_def_app_icon"
+26-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:11:9-56
+27        android:label="氢桌面侧边栏"
+27-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:12:9-31
+28        android:requestLegacyExternalStorage="true"
+28-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:16:9-52
+29        android:roundIcon="@android:mipmap/sym_def_app_icon"
+29-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:13:9-61
+30        android:supportsRtl="true"
+30-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:14:9-35
+31        android:theme="@style/Theme.HydrogenDockBar" >
+31-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:15:9-53
+32        <activity
+32-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:18:9-25:20
+33            android:name="com.hydrogen.dockbar.MainActivity"
+33-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:19:13-41
+34            android:exported="true" >
+34-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:20:13-36
+35            <intent-filter>
+35-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:21:13-24:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:22:17-69
+36-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:22:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:23:17-77
+38-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:23:27-74
+39            </intent-filter>
+40        </activity>
+41
+42        <service
+42-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:27:9-30:40
+43            android:name="com.hydrogen.dockbar.FloatingIconService"
+43-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:28:13-48
+44            android:enabled="true"
+44-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:29:13-35
+45            android:exported="false" />
+45-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:30:13-37
+46
+47        <receiver
+47-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:32:9-40:20
+48            android:name="com.hydrogen.dockbar.BootReceiver"
+48-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:33:13-41
+49            android:enabled="true"
+49-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:34:13-35
+50            android:exported="true" >
+50-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:35:13-36
+51            <intent-filter>
+51-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:36:13-39:29
+52                <action android:name="android.intent.action.BOOT_COMPLETED" />
+52-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:37:17-79
+52-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:37:25-76
+53
+54                <category android:name="android.intent.category.DEFAULT" />
+54-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:38:17-76
+54-->F:\build_workspace\05-21\app\src\main\AndroidManifest.xml:38:27-73
+55            </intent-filter>
+56        </receiver>
+57
+58        <provider
+58-->[androidx.emoji2:emoji2:1.2.0] D:\dev2026\Gradle_Home\caches\8.9\transforms\94f3b6f394c93eb025d331a23cfeb32f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+59            android:name="androidx.startup.InitializationProvider"
+59-->[androidx.emoji2:emoji2:1.2.0] D:\dev2026\Gradle_Home\caches\8.9\transforms\94f3b6f394c93eb025d331a23cfeb32f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+60            android:authorities="com.hydrogen.dockbar.androidx-startup"
+60-->[androidx.emoji2:emoji2:1.2.0] D:\dev2026\Gradle_Home\caches\8.9\transforms\94f3b6f394c93eb025d331a23cfeb32f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+61            android:exported="false" >
+61-->[androidx.emoji2:emoji2:1.2.0] D:\dev2026\Gradle_Home\caches\8.9\transforms\94f3b6f394c93eb025d331a23cfeb32f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+62            <meta-data
+62-->[androidx.emoji2:emoji2:1.2.0] D:\dev2026\Gradle_Home\caches\8.9\transforms\94f3b6f394c93eb025d331a23cfeb32f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+63                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+63-->[androidx.emoji2:emoji2:1.2.0] D:\dev2026\Gradle_Home\caches\8.9\transforms\94f3b6f394c93eb025d331a23cfeb32f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+64                android:value="androidx.startup" />
+64-->[androidx.emoji2:emoji2:1.2.0] D:\dev2026\Gradle_Home\caches\8.9\transforms\94f3b6f394c93eb025d331a23cfeb32f\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+65            <meta-data
+65-->[androidx.lifecycle:lifecycle-process:2.4.1] D:\dev2026\Gradle_Home\caches\8.9\transforms\4df849304e87ba44ed0268a6c933ce4b\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+66                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+66-->[androidx.lifecycle:lifecycle-process:2.4.1] D:\dev2026\Gradle_Home\caches\8.9\transforms\4df849304e87ba44ed0268a6c933ce4b\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+67                android:value="androidx.startup" />
+67-->[androidx.lifecycle:lifecycle-process:2.4.1] D:\dev2026\Gradle_Home\caches\8.9\transforms\4df849304e87ba44ed0268a6c933ce4b\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+68        </provider>
+69    </application>
+70
+71</manifest>

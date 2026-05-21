@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="悬浮栏配置"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btn_config_nav"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择导航应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_config_music"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择音乐应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_config_phone"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择电话应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_config_settings"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择设置应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btn_restart_service"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="重启悬浮栏"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

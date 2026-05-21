@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\dev2026\\Gradle_Home\\daemon\\8.9\\com.hydrogen.dockbar.app-merged_res-28:\\layout_activity_main.xml.flat",
+        "source": "D:\\dev2026\\Gradle_Home\\daemon\\8.9\\com.hydrogen.dockbar.app-main-30:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\dev2026\\Gradle_Home\\daemon\\8.9\\com.hydrogen.dockbar.app-merged_res-28:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "D:\\dev2026\\Gradle_Home\\daemon\\8.9\\com.hydrogen.dockbar.app-main-30:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "D:\\dev2026\\Gradle_Home\\daemon\\8.9\\com.hydrogen.dockbar.app-merged_res-28:\\layout_floating_dockbar.xml.flat",
+        "source": "D:\\dev2026\\Gradle_Home\\daemon\\8.9\\com.hydrogen.dockbar.app-main-30:\\layout\\floating_dockbar.xml"
+    },
+    {
+        "merged": "D:\\dev2026\\Gradle_Home\\daemon\\8.9\\com.hydrogen.dockbar.app-merged_res-28:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "D:\\dev2026\\Gradle_Home\\daemon\\8.9\\com.hydrogen.dockbar.app-main-30:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "com.hydrogen.dockbar.app-merged_res-28:/layout_floating_dockbar.xml.flat",
+        "source": "com.hydrogen.dockbar.app-main-30:/layout/floating_dockbar.xml"
+    }
+]
