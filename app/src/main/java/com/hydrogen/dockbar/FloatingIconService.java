@@ -21,7 +21,7 @@ public class FloatingIconService extends Service {
     private String[] defaultPackages = {
             "com.google.android.apps.maps",  // 导航
             "com.google.android.music",     // 音乐
-            "com.android.dialer",            // 电话
+            "com.google.android.documentsui", // 文件管理
             "com.android.settings"           // 设置
     };
 

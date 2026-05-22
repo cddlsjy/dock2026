@@ -30,16 +30,16 @@
         android:id="@+id/btn_phone"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@android:drawable/ic_input_add"
+        android:src="@android:drawable/ic_menu_agenda"
         android:background="?android:attr/selectableItemBackgroundBorderless"
-        android:contentDescription="电话"
+        android:contentDescription="文件管理"
         android:layout_margin="5dp" />
 
     <ImageButton
         android:id="@+id/btn_settings"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@android:drawable/ic_menu_preferences"
+        android:src="@android:drawable/ic_menu_info_details"
         android:background="?android:attr/selectableItemBackgroundBorderless"
         android:contentDescription="设置"
         android:layout_margin="5dp" />
