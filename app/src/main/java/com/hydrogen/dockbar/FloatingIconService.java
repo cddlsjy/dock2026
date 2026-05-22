@@ -19,6 +19,7 @@ public class FloatingIconService extends Service {
     private SharedPreferences prefs;
 
     private String[] defaultPackages = {
+            "",                              // 主页（空表示使用返回主页功能）
             "com.google.android.apps.maps",  // 导航
             "com.google.android.music",     // 音乐
             "com.google.android.documentsui", // 文件管理
@@ -58,22 +59,36 @@ public class FloatingIconService extends Service {
     }
 
     private void setupButtons() {
+        ImageButton homeBtn = floatingView.findViewById(R.id.btn_home);
         ImageButton navBtn = floatingView.findViewById(R.id.btn_nav);
         ImageButton musicBtn = floatingView.findViewById(R.id.btn_music);
         ImageButton phoneBtn = floatingView.findViewById(R.id.btn_phone);
         ImageButton settingsBtn = floatingView.findViewById(R.id.btn_settings);
         ImageButton appManagerBtn = floatingView.findViewById(R.id.btn_app_manager);
 
-        String navPkg = prefs.getString("nav_pkg", defaultPackages[0]);
-        String musicPkg = prefs.getString("music_pkg", defaultPackages[1]);
-        String phonePkg = prefs.getString("phone_pkg", defaultPackages[2]);
-        String settingsPkg = prefs.getString("settings_pkg", defaultPackages[3]);
+        String homePkg = prefs.getString("home_pkg", defaultPackages[0]);
+        String navPkg = prefs.getString("nav_pkg", defaultPackages[1]);
+        String musicPkg = prefs.getString("music_pkg", defaultPackages[2]);
+        String phonePkg = prefs.getString("phone_pkg", defaultPackages[3]);
+        String settingsPkg = prefs.getString("settings_pkg", defaultPackages[4]);
 
+        homeBtn.setOnClickListener(v -> handleHomeClick(homePkg));
         navBtn.setOnClickListener(v -> launchApp(navPkg));
         musicBtn.setOnClickListener(v -> launchApp(musicPkg));
         phoneBtn.setOnClickListener(v -> launchApp(phonePkg));
         settingsBtn.setOnClickListener(v -> launchApp(settingsPkg));
         appManagerBtn.setOnClickListener(v -> openSettingsActivity());
+    }
+
+    private void handleHomeClick(String homePkg) {
+        if (homePkg == null || homePkg.isEmpty()) {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        } else {
+            launchApp(homePkg);
+        }
     }
 
     private void launchApp(String packageName) {

@@ -78,12 +78,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupButtons() {
+        Button btnHome = findViewById(R.id.btn_config_home);
         Button btnNav = findViewById(R.id.btn_config_nav);
         Button btnMusic = findViewById(R.id.btn_config_music);
         Button btnPhone = findViewById(R.id.btn_config_phone);
         Button btnSettings = findViewById(R.id.btn_config_settings);
         Button btnRestart = findViewById(R.id.btn_restart_service);
 
+        btnHome.setOnClickListener(v -> pickAppFor("home_pkg"));
         btnNav.setOnClickListener(v -> pickAppFor("nav_pkg"));
         btnMusic.setOnClickListener(v -> pickAppFor("music_pkg"));
         btnPhone.setOnClickListener(v -> pickAppFor("phone_pkg"));
