@@ -84,20 +84,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupButtons() {
-        Button btnHome = findViewById(R.id.btn_config_home);
         Button btnNav = findViewById(R.id.btn_config_nav);
         Button btnRadio = findViewById(R.id.btn_config_radio);
         Button btnMusic = findViewById(R.id.btn_config_music);
         Button btnPhone = findViewById(R.id.btn_config_phone);
-        Button btnSettings = findViewById(R.id.btn_config_settings);
         Button btnRestart = findViewById(R.id.btn_restart_service);
 
-        btnHome.setOnClickListener(v -> pickAppFor("home_pkg"));
         btnNav.setOnClickListener(v -> pickAppFor("nav_pkg"));
         btnRadio.setOnClickListener(v -> pickAppFor("radio_pkg"));
         btnMusic.setOnClickListener(v -> pickAppFor("music_pkg"));
         btnPhone.setOnClickListener(v -> pickAppFor("phone_pkg"));
-        btnSettings.setOnClickListener(v -> pickAppFor("settings_pkg"));
 
         btnRestart.setOnClickListener(v -> {
             restartService();
@@ -109,11 +105,15 @@ public class MainActivity extends AppCompatActivity {
     private void setupSettings() {
         Switch edgeHideSwitch = findViewById(R.id.switch_edge_hide);
         SeekBar opacitySeekBar = findViewById(R.id.seekbar_opacity);
+        SeekBar iconSizeSeekBar = findViewById(R.id.seekbar_icon_size);
         TextView opacityValue = findViewById(R.id.tv_opacity_value);
+        TextView iconSizeValue = findViewById(R.id.tv_icon_size_value);
 
         edgeHideSwitch.setChecked(prefs.getBoolean("edge_hide", false));
         opacitySeekBar.setProgress(prefs.getInt("dockbar_opacity", 80));
+        iconSizeSeekBar.setProgress(prefs.getInt("icon_size_progress", 50));
         opacityValue.setText(prefs.getInt("dockbar_opacity", 80) + "%");
+        iconSizeValue.setText(getIconSizeDp(prefs.getInt("icon_size_progress", 50)) + "dp");
 
         edgeHideSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             prefs.edit().putBoolean("edge_hide", isChecked).apply();
@@ -123,11 +123,6 @@ public class MainActivity extends AppCompatActivity {
         opacitySeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                // 限制最小值为 10
-                if (progress < 10) {
-                    seekBar.setProgress(10);
-                    progress = 10;
-                }
                 opacityValue.setText(progress + "%");
             }
 
@@ -136,12 +131,31 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                // 确保不小于 10
-                int progress = Math.max(seekBar.getProgress(), 10);
-                prefs.edit().putInt("dockbar_opacity", progress).apply();
+                prefs.edit().putInt("dockbar_opacity", seekBar.getProgress()).apply();
                 restartService();
             }
         });
+
+        iconSizeSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                iconSizeValue.setText(getIconSizeDp(progress) + "dp");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {}
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                prefs.edit().putInt("icon_size_progress", seekBar.getProgress()).apply();
+                restartService();
+            }
+        });
+    }
+
+    private int getIconSizeDp(int progress) {
+        // 进度 0-100 对应 30dp-90dp
+        return 30 + (progress * 60 / 100);
     }
 
     private void pickAppFor(String key) {

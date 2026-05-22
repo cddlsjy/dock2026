@@ -11,6 +11,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -97,9 +98,33 @@ public class FloatingIconService extends Service {
     }
 
     private void applyThemeAndOpacity() {
-        int opacity = Math.max(prefs.getInt("dockbar_opacity", 80), 10); // 确保不小于 10
+        int opacity = prefs.getInt("dockbar_opacity", 80);
         int backgroundColor = getColorWithOpacity(0xFF333333, opacity);
         floatingView.setBackgroundColor(backgroundColor);
+        applyIconSize();
+    }
+
+    private void applyIconSize() {
+        int iconSizeProgress = prefs.getInt("icon_size_progress", 50);
+        int iconSizeDp = 30 + (iconSizeProgress * 60 / 100);
+        int iconSizePx = (int) (iconSizeDp * getResources().getDisplayMetrics().density);
+
+        ImageButton[] buttons = {
+                floatingView.findViewById(R.id.btn_home),
+                floatingView.findViewById(R.id.btn_nav),
+                floatingView.findViewById(R.id.btn_radio),
+                floatingView.findViewById(R.id.btn_music),
+                floatingView.findViewById(R.id.btn_phone),
+                floatingView.findViewById(R.id.btn_settings),
+                floatingView.findViewById(R.id.btn_app_manager)
+        };
+
+        for (ImageButton button : buttons) {
+            ViewGroup.LayoutParams params = button.getLayoutParams();
+            params.width = iconSizePx;
+            params.height = iconSizePx;
+            button.setLayoutParams(params);
+        }
     }
 
     private int getColorWithOpacity(int baseColor, int opacityPercent) {
