@@ -19,24 +19,11 @@ jobs:
           distribution: 'temurin'
           cache: 'gradle'
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
-        with:
-          gradle-version: '8.13'
-
-      # 方法二：临时注释 gradle.properties 中的 org.gradle.java.home 行
-      # 同时通过 -D 参数显式指定正确的 JAVA_HOME
       - name: Make gradlew executable
         run: chmod +x gradlew
 
-      - name: Build APK (override java.home)
-        run: |
-          # 备份并注释掉可能存在的错误 java.home 配置
-          if [ -f gradle.properties ]; then
-            sed -i 's/^org.gradle.java.home=/# &/' gradle.properties || true
-          fi
-          # 使用 -D 参数显式指定正确的 JAVA_HOME
-          ./gradlew assembleDebug --no-daemon -Dorg.gradle.java.home=$JAVA_HOME
+      - name: Build APK
+        run: ./gradlew assembleDebug --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
