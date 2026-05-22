@@ -130,6 +130,11 @@ public class MainActivity extends AppCompatActivity {
         opacitySeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                // 限制最小值为 10
+                if (progress < 10) {
+                    seekBar.setProgress(10);
+                    progress = 10;
+                }
                 opacityValue.setText(progress + "%");
             }
 
@@ -138,7 +143,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                prefs.edit().putInt("dockbar_opacity", seekBar.getProgress()).apply();
+                // 确保不小于 10
+                int progress = Math.max(seekBar.getProgress(), 10);
+                prefs.edit().putInt("dockbar_opacity", progress).apply();
                 restartService();
             }
         });

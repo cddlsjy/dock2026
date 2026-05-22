@@ -98,7 +98,7 @@ public class FloatingIconService extends Service {
 
     private void applyThemeAndOpacity() {
         boolean isDarkMode = prefs.getBoolean("dark_mode", false);
-        int opacity = prefs.getInt("dockbar_opacity", 80);
+        int opacity = Math.max(prefs.getInt("dockbar_opacity", 80), 10); // 确保不小于 10
         
         int backgroundColor;
         if (isDarkMode) {
