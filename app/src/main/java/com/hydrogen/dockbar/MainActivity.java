@@ -8,6 +8,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.widget.Button;
+import android.widget.SeekBar;
+import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,11 +19,14 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_OVERLAY_PERMISSION = 1234;
 
     private String pendingConfigKey;
+    private SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        prefs = getSharedPreferences("dockbar_config", MODE_PRIVATE);
 
         boolean fromFloatingBar = getIntent().getBooleanExtra("from_floating_bar", false);
 
@@ -31,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         setupButtons();
+        setupSettings();
     }
 
     private void checkAndStartService() {
@@ -71,8 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 getSharedPreferences("dockbar_config", MODE_PRIVATE).edit()
                         .putString(pendingConfigKey, pkg).apply();
                 Toast.makeText(this, "已保存: " + pkg, Toast.LENGTH_SHORT).show();
-                stopService(new Intent(this, FloatingIconService.class));
-                startService(new Intent(this, FloatingIconService.class));
+                restartService();
             }
         }
     }
@@ -94,10 +100,47 @@ public class MainActivity extends AppCompatActivity {
         btnSettings.setOnClickListener(v -> pickAppFor("settings_pkg"));
 
         btnRestart.setOnClickListener(v -> {
-            stopService(new Intent(this, FloatingIconService.class));
-            startService(new Intent(this, FloatingIconService.class));
+            restartService();
             Toast.makeText(this, "悬浮栏已重启", Toast.LENGTH_SHORT).show();
             finish();
+        });
+    }
+
+    private void setupSettings() {
+        Switch darkModeSwitch = findViewById(R.id.switch_dark_mode);
+        Switch edgeHideSwitch = findViewById(R.id.switch_edge_hide);
+        SeekBar opacitySeekBar = findViewById(R.id.seekbar_opacity);
+        TextView opacityValue = findViewById(R.id.tv_opacity_value);
+
+        darkModeSwitch.setChecked(prefs.getBoolean("dark_mode", false));
+        edgeHideSwitch.setChecked(prefs.getBoolean("edge_hide", false));
+        opacitySeekBar.setProgress(prefs.getInt("dockbar_opacity", 80));
+        opacityValue.setText(prefs.getInt("dockbar_opacity", 80) + "%");
+
+        darkModeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            prefs.edit().putBoolean("dark_mode", isChecked).apply();
+            restartService();
+        });
+
+        edgeHideSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            prefs.edit().putBoolean("edge_hide", isChecked).apply();
+            restartService();
+        });
+
+        opacitySeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                opacityValue.setText(progress + "%");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {}
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                prefs.edit().putInt("dockbar_opacity", seekBar.getProgress()).apply();
+                restartService();
+            }
         });
     }
 
@@ -106,5 +149,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_PICK_ACTIVITY);
         intent.putExtra(Intent.EXTRA_INTENT, new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER));
         startActivityForResult(intent, 5678);
+    }
+
+    private void restartService() {
+        stopService(new Intent(this, FloatingIconService.class));
+        startService(new Intent(this, FloatingIconService.class));
     }
 }

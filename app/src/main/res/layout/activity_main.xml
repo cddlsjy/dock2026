@@ -50,7 +50,7 @@
         android:id="@+id/btn_config_phone"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:text="选择电话应用"
+        android:text="选择文件管理应用"
         android:textSize="16sp"
         android:layout_marginBottom="12dp" />
 
@@ -61,6 +61,80 @@
         android:text="选择设置应用"
         android:textSize="16sp"
         android:layout_marginBottom="24dp" />
+
+    <View
+        android:layout_width="280dp"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"
+        android:layout_marginBottom="20dp" />
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="夜间模式"
+            android:textSize="16sp" />
+        <Switch
+            android:id="@+id/switch_dark_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="边缘隐藏"
+            android:textSize="16sp" />
+        <Switch
+            android:id="@+id/switch_edge_hide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="24dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="透明度"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tv_opacity_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="80%"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <SeekBar
+            android:id="@+id/seekbar_opacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:min="10"
+            android:max="100"
+            android:progress="80" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_restart_service"

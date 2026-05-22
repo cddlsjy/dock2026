@@ -9,6 +9,7 @@ import android.os.IBinder;
 import android.provider.Settings;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
@@ -19,6 +20,16 @@ public class FloatingIconService extends Service {
     private WindowManager windowManager;
     private View floatingView;
     private SharedPreferences prefs;
+    private WindowManager.LayoutParams params;
+
+    private float initialX;
+    private float initialY;
+    private float initialTouchX;
+    private float initialTouchY;
+    
+    private boolean isHidden = false;
+    private int hiddenOffset = 0;
+    private int edgeThreshold = 50;
 
     private String[] defaultPackages = {
             "",                              // 主页（空表示使用返回主页功能）
@@ -61,23 +72,141 @@ public class FloatingIconService extends Service {
                 windowType = WindowManager.LayoutParams.TYPE_PHONE;
             }
 
-            final WindowManager.LayoutParams params = new WindowManager.LayoutParams(
+            params = new WindowManager.LayoutParams(
                     WindowManager.LayoutParams.WRAP_CONTENT,
                     WindowManager.LayoutParams.WRAP_CONTENT,
                     windowType,
                     WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                     PixelFormat.TRANSLUCENT);
 
-            params.gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
-            params.x = 0;
-            params.y = 0;
+            params.gravity = Gravity.LEFT | Gravity.TOP;
+            
+            int savedX = prefs.getInt("dockbar_x", 0);
+            int savedY = prefs.getInt("dockbar_y", getScreenHeight() / 2 - 200);
+            params.x = savedX;
+            params.y = savedY;
 
             windowManager.addView(floatingView, params);
+            applyThemeAndOpacity();
             setupButtons();
+            setupDragListener();
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(this, "启动悬浮栏失败: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
+    }
+
+    private void applyThemeAndOpacity() {
+        boolean isDarkMode = prefs.getBoolean("dark_mode", false);
+        int opacity = prefs.getInt("dockbar_opacity", 80);
+        
+        int backgroundColor;
+        if (isDarkMode) {
+            backgroundColor = getColorWithOpacity(0xFF1a1a1a, opacity);
+        } else {
+            backgroundColor = getColorWithOpacity(0xFF33000000, opacity);
+        }
+        
+        floatingView.setBackgroundColor(backgroundColor);
+    }
+
+    private int getColorWithOpacity(int baseColor, int opacityPercent) {
+        int alpha = (int) (opacityPercent * 2.55);
+        return (alpha << 24) | (baseColor & 0xFFFFFF);
+    }
+
+    private int getScreenHeight() {
+        return getResources().getDisplayMetrics().heightPixels;
+    }
+
+    private int getScreenWidth() {
+        return getResources().getDisplayMetrics().widthPixels;
+    }
+
+    private void setupDragListener() {
+        floatingView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (isHidden) {
+                            showFloatingView();
+                        }
+                        initialX = params.x;
+                        initialY = params.y;
+                        initialTouchX = event.getRawX();
+                        initialTouchY = event.getRawY();
+                        return true;
+                    case MotionEvent.ACTION_MOVE:
+                        params.x = (int) (initialX + event.getRawX() - initialTouchX);
+                        params.y = (int) (initialY + event.getRawY() - initialTouchY);
+                        
+                        params.x = Math.max(0, Math.min(params.x, getScreenWidth() - floatingView.getWidth()));
+                        params.y = Math.max(0, Math.min(params.y, getScreenHeight() - floatingView.getHeight()));
+                        
+                        windowManager.updateViewLayout(floatingView, params);
+                        return true;
+                    case MotionEvent.ACTION_UP:
+                        savePosition();
+                        autoHideToEdge();
+                        return true;
+                }
+                return false;
+            }
+        });
+    }
+
+    private void autoHideToEdge() {
+        if (!prefs.getBoolean("edge_hide", false)) {
+            return;
+        }
+        
+        int centerX = params.x + floatingView.getWidth() / 2;
+        if (centerX < getScreenWidth() / 2) {
+            if (params.x > edgeThreshold) {
+                hideFloatingView(true);
+            }
+        } else {
+            if (params.x < getScreenWidth() - floatingView.getWidth() - edgeThreshold) {
+                hideFloatingView(false);
+            }
+        }
+    }
+
+    private void hideFloatingView(boolean leftSide) {
+        if (isHidden) {
+            return;
+        }
+        
+        hiddenOffset = floatingView.getWidth() - 20;
+        if (leftSide) {
+            params.x = -hiddenOffset;
+        } else {
+            params.x = getScreenWidth() - 20;
+        }
+        windowManager.updateViewLayout(floatingView, params);
+        isHidden = true;
+    }
+
+    private void showFloatingView() {
+        if (!isHidden) {
+            return;
+        }
+        
+        if (params.x < 0) {
+            params.x = 0;
+        } else {
+            params.x = getScreenWidth() - floatingView.getWidth();
+        }
+        windowManager.updateViewLayout(floatingView, params);
+        isHidden = false;
+    }
+
+    private void savePosition() {
+        prefs.edit()
+                .putInt("dockbar_x", params.x)
+                .putInt("dockbar_y", params.y)
+                .apply();
     }
 
     private void setupButtons() {
@@ -96,6 +225,13 @@ public class FloatingIconService extends Service {
         String phonePkg = prefs.getString("phone_pkg", defaultPackages[4]);
         String settingsPkg = prefs.getString("settings_pkg", defaultPackages[5]);
 
+        setAppIcon(homeBtn, homePkg, R.drawable.ic_home);
+        setAppIcon(navBtn, navPkg, android.R.drawable.ic_menu_directions);
+        setAppIcon(radioBtn, radioPkg, R.drawable.ic_radio);
+        setAppIcon(musicBtn, musicPkg, android.R.drawable.ic_lock_silent_mode_off);
+        setAppIcon(phoneBtn, phonePkg, R.drawable.ic_folder);
+        setAppIcon(settingsBtn, settingsPkg, R.drawable.ic_settings);
+
         homeBtn.setOnClickListener(v -> handleHomeClick(homePkg));
         navBtn.setOnClickListener(v -> launchApp(navPkg));
         radioBtn.setOnClickListener(v -> launchApp(radioPkg));
@@ -103,6 +239,18 @@ public class FloatingIconService extends Service {
         phoneBtn.setOnClickListener(v -> launchApp(phonePkg));
         settingsBtn.setOnClickListener(v -> launchApp(settingsPkg));
         appManagerBtn.setOnClickListener(v -> openSettingsActivity());
+    }
+
+    private void setAppIcon(ImageButton button, String packageName, int defaultResId) {
+        if (packageName == null || packageName.isEmpty()) {
+            button.setImageResource(defaultResId);
+            return;
+        }
+        try {
+            button.setImageDrawable(getPackageManager().getApplicationIcon(packageName));
+        } catch (Exception e) {
+            button.setImageResource(defaultResId);
+        }
     }
 
     private void handleHomeClick(String homePkg) {
