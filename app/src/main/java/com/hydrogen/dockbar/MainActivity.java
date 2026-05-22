@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupButtons() {
         Button btnHome = findViewById(R.id.btn_config_home);
         Button btnNav = findViewById(R.id.btn_config_nav);
+        Button btnRadio = findViewById(R.id.btn_config_radio);
         Button btnMusic = findViewById(R.id.btn_config_music);
         Button btnPhone = findViewById(R.id.btn_config_phone);
         Button btnSettings = findViewById(R.id.btn_config_settings);
@@ -87,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnHome.setOnClickListener(v -> pickAppFor("home_pkg"));
         btnNav.setOnClickListener(v -> pickAppFor("nav_pkg"));
+        btnRadio.setOnClickListener(v -> pickAppFor("radio_pkg"));
         btnMusic.setOnClickListener(v -> pickAppFor("music_pkg"));
         btnPhone.setOnClickListener(v -> pickAppFor("phone_pkg"));
         btnSettings.setOnClickListener(v -> pickAppFor("settings_pkg"));

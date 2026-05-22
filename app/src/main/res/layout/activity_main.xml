@@ -31,6 +31,14 @@
         android:layout_marginBottom="12dp" />
 
     <Button
+        android:id="@+id/btn_config_radio"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择收音机应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
         android:id="@+id/btn_config_music"
         android:layout_width="280dp"
         android:layout_height="wrap_content"

@@ -21,6 +21,7 @@ public class FloatingIconService extends Service {
     private String[] defaultPackages = {
             "",                              // 主页（空表示使用返回主页功能）
             "com.google.android.apps.maps",  // 导航
+            "com.android.providers.downloads.ui", // 收音机（默认使用下载管理器）
             "com.google.android.music",     // 音乐
             "com.google.android.documentsui", // 文件管理
             "com.android.settings"           // 设置
@@ -61,6 +62,7 @@ public class FloatingIconService extends Service {
     private void setupButtons() {
         ImageButton homeBtn = floatingView.findViewById(R.id.btn_home);
         ImageButton navBtn = floatingView.findViewById(R.id.btn_nav);
+        ImageButton radioBtn = floatingView.findViewById(R.id.btn_radio);
         ImageButton musicBtn = floatingView.findViewById(R.id.btn_music);
         ImageButton phoneBtn = floatingView.findViewById(R.id.btn_phone);
         ImageButton settingsBtn = floatingView.findViewById(R.id.btn_settings);
@@ -68,12 +70,14 @@ public class FloatingIconService extends Service {
 
         String homePkg = prefs.getString("home_pkg", defaultPackages[0]);
         String navPkg = prefs.getString("nav_pkg", defaultPackages[1]);
-        String musicPkg = prefs.getString("music_pkg", defaultPackages[2]);
-        String phonePkg = prefs.getString("phone_pkg", defaultPackages[3]);
-        String settingsPkg = prefs.getString("settings_pkg", defaultPackages[4]);
+        String radioPkg = prefs.getString("radio_pkg", defaultPackages[2]);
+        String musicPkg = prefs.getString("music_pkg", defaultPackages[3]);
+        String phonePkg = prefs.getString("phone_pkg", defaultPackages[4]);
+        String settingsPkg = prefs.getString("settings_pkg", defaultPackages[5]);
 
         homeBtn.setOnClickListener(v -> handleHomeClick(homePkg));
         navBtn.setOnClickListener(v -> launchApp(navPkg));
+        radioBtn.setOnClickListener(v -> launchApp(radioPkg));
         musicBtn.setOnClickListener(v -> launchApp(musicPkg));
         phoneBtn.setOnClickListener(v -> launchApp(phonePkg));
         settingsBtn.setOnClickListener(v -> launchApp(settingsPkg));
