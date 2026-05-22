@@ -104,7 +104,7 @@ public class FloatingIconService extends Service {
         if (isDarkMode) {
             backgroundColor = getColorWithOpacity(0xFF1a1a1a, opacity);
         } else {
-            backgroundColor = getColorWithOpacity(0xFF33000000, opacity);
+            backgroundColor = getColorWithOpacity(0xFF333333, opacity);
         }
         
         floatingView.setBackgroundColor(backgroundColor);
