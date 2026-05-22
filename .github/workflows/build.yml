@@ -2,7 +2,7 @@ name: Build APK
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master, trae/solo-agent-N6gRU4 ]
   workflow_dispatch:
 
 jobs:
@@ -26,6 +26,9 @@ jobs:
 
       # 方法二：临时注释 gradle.properties 中的 org.gradle.java.home 行
       # 同时通过 -D 参数显式指定正确的 JAVA_HOME
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
       - name: Build APK (override java.home)
         run: |
           # 备份并注释掉可能存在的错误 java.home 配置
@@ -33,7 +36,7 @@ jobs:
             sed -i 's/^org.gradle.java.home=/# &/' gradle.properties || true
           fi
           # 使用 -D 参数显式指定正确的 JAVA_HOME
-          gradle assembleDebug --no-daemon -Dorg.gradle.java.home=$JAVA_HOME
+          ./gradlew assembleDebug --no-daemon -Dorg.gradle.java.home=$JAVA_HOME
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
