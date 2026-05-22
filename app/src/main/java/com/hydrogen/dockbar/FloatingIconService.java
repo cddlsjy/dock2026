@@ -4,7 +4,9 @@ import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.PixelFormat;
+import android.os.Build;
 import android.os.IBinder;
+import android.provider.Settings;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,22 +43,41 @@ public class FloatingIconService extends Service {
     }
 
     private void createFloatingView() {
-        windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
-        floatingView = LayoutInflater.from(this).inflate(R.layout.floating_dockbar, null);
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (!Settings.canDrawOverlays(this)) {
+                    Toast.makeText(this, "请授予悬浮窗权限", Toast.LENGTH_LONG).show();
+                    return;
+                }
+            }
 
-        final WindowManager.LayoutParams params = new WindowManager.LayoutParams(
-                WindowManager.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
-                PixelFormat.TRANSLUCENT);
+            windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+            floatingView = LayoutInflater.from(this).inflate(R.layout.floating_dockbar, null);
 
-        params.gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
-        params.x = 0;
-        params.y = 0;
+            int windowType;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                windowType = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+            } else {
+                windowType = WindowManager.LayoutParams.TYPE_PHONE;
+            }
 
-        windowManager.addView(floatingView, params);
-        setupButtons();
+            final WindowManager.LayoutParams params = new WindowManager.LayoutParams(
+                    WindowManager.LayoutParams.WRAP_CONTENT,
+                    WindowManager.LayoutParams.WRAP_CONTENT,
+                    windowType,
+                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                    PixelFormat.TRANSLUCENT);
+
+            params.gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
+            params.x = 0;
+            params.y = 0;
+
+            windowManager.addView(floatingView, params);
+            setupButtons();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this, "启动悬浮栏失败: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
     }
 
     private void setupButtons() {
