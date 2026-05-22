@@ -97,16 +97,8 @@ public class FloatingIconService extends Service {
     }
 
     private void applyThemeAndOpacity() {
-        boolean isDarkMode = prefs.getBoolean("dark_mode", false);
         int opacity = Math.max(prefs.getInt("dockbar_opacity", 80), 10); // 确保不小于 10
-        
-        int backgroundColor;
-        if (isDarkMode) {
-            backgroundColor = getColorWithOpacity(0xFF1a1a1a, opacity);
-        } else {
-            backgroundColor = getColorWithOpacity(0xFF333333, opacity);
-        }
-        
+        int backgroundColor = getColorWithOpacity(0xFF333333, opacity);
         floatingView.setBackgroundColor(backgroundColor);
     }
 

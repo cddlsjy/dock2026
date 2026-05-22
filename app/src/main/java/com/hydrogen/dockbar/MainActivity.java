@@ -107,20 +107,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupSettings() {
-        Switch darkModeSwitch = findViewById(R.id.switch_dark_mode);
         Switch edgeHideSwitch = findViewById(R.id.switch_edge_hide);
         SeekBar opacitySeekBar = findViewById(R.id.seekbar_opacity);
         TextView opacityValue = findViewById(R.id.tv_opacity_value);
 
-        darkModeSwitch.setChecked(prefs.getBoolean("dark_mode", false));
         edgeHideSwitch.setChecked(prefs.getBoolean("edge_hide", false));
         opacitySeekBar.setProgress(prefs.getInt("dockbar_opacity", 80));
         opacityValue.setText(prefs.getInt("dockbar_opacity", 80) + "%");
-
-        darkModeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            prefs.edit().putBoolean("dark_mode", isChecked).apply();
-            restartService();
-        });
 
         edgeHideSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             prefs.edit().putBoolean("edge_hide", isChecked).apply();
