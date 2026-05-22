@@ -30,7 +30,7 @@
         android:id="@+id/btn_radio"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@android:drawable/ic_dialog_info"
+        android:src="@drawable/ic_radio"
         android:background="?android:attr/selectableItemBackgroundBorderless"
         android:contentDescription="收音机"
         android:layout_margin="5dp" />
