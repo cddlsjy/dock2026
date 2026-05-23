@@ -1,4 +1,4 @@
-# 氢桌面侧边栏 (Hydrogen DockBar)
+# 桌面侧边栏 (Hydrogen DockBar)
 
 一个简单的Android应用，在屏幕左侧显示永久悬浮的快捷启动栏，类似氢桌面的效果。
 
