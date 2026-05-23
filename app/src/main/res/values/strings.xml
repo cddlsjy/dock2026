@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">桌面侧边栏</string>
+    <string-array name="hide_mode_options">
+        <item>自动隐藏</item>
+        <item>手动隐藏</item>
+        <item>不隐藏</item>
+    </string-array>
+</resources>

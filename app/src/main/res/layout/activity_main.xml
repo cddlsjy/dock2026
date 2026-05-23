@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/btn_config_nav"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择导航应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_config_radio"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择收音机应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_config_music"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择音乐应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_config_phone"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择文件管理应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp" />
+
+    <View
+        android:layout_width="280dp"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"
+        android:layout_marginBottom="20dp" />
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="隐藏模式"
+            android:textSize="16sp"
+            android:layout_marginEnd="12dp" />
+        <Spinner
+            android:id="@+id/spinner_hide_mode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/hide_mode_options" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="图标大小"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tv_icon_size_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="60dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <SeekBar
+            android:id="@+id/seekbar_icon_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="24dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="透明度"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/tv_opacity_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="80%"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <SeekBar
+            android:id="@+id/seekbar_opacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="80" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_restart_service"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="重启悬浮栏"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

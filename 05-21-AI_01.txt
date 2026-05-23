@@ -1,0 +1,1709 @@
+================================================================================
+项目目录树
+================================================================================
+
+├── .gradle
+│   ├── 7.5
+│   │   ├── checksums
+│   │   │   └── checksums.lock
+│   │   ├── fileChanges
+│   │   │   └── last-build.bin
+│   │   ├── fileHashes
+│   │   │   └── fileHashes.lock
+│   │   └── gc.properties
+│   ├── 8.9
+│   │   ├── checksums
+│   │   │   ├── checksums.lock
+│   │   │   ├── md5-checksums.bin
+│   │   │   └── sha1-checksums.bin
+│   │   ├── dependencies-accessors
+│   │   │   └── gc.properties
+│   │   ├── executionHistory
+│   │   │   ├── executionHistory.bin
+│   │   │   └── executionHistory.lock
+│   │   ├── fileChanges
+│   │   │   └── last-build.bin
+│   │   ├── fileHashes
+│   │   │   ├── fileHashes.bin
+│   │   │   ├── fileHashes.lock
+│   │   │   └── resourceHashesCache.bin
+│   │   └── gc.properties
+│   ├── 9.2.0
+│   │   ├── checksums
+│   │   │   └── checksums.lock
+│   │   ├── fileChanges
+│   │   │   └── last-build.bin
+│   │   ├── fileHashes
+│   │   │   ├── fileHashes.bin
+│   │   │   └── fileHashes.lock
+│   │   └── gc.properties
+│   ├── buildOutputCleanup
+│   │   ├── buildOutputCleanup.lock
+│   │   ├── cache.properties
+│   │   └── outputFiles.bin
+│   ├── file-system.probe
+│   └── vcs-1
+│       └── gc.properties
+├── 05-21-AI.txt
+├── 05-21.md
+├── README.md
+├── app
+│   ├── build
+│   │   ├── generated
+│   │   │   └── source
+│   │   │       └── buildConfig
+│   │   │           └── debug
+│   │   │               └── com
+│   │   │                   └── hydrogen
+│   │   │                       └── dockbar
+│   │   │                           └── BuildConfig.java
+│   │   ├── intermediates
+│   │   │   ├── annotation_processor_list
+│   │   │   │   └── debug
+│   │   │   │       └── annotationProcessors.json
+│   │   │   ├── apk_ide_redirect_file
+│   │   │   │   └── debug
+│   │   │   │       └── redirect.txt
+│   │   │   ├── app_metadata
+│   │   │   │   └── debug
+│   │   │   │       └── app-metadata.properties
+│   │   │   ├── compatible_screen_manifest
+│   │   │   │   └── debug
+│   │   │   │       └── output-metadata.json
+│   │   │   ├── compile_and_runtime_not_namespaced_r_class_jar
+│   │   │   │   └── debug
+│   │   │   │       └── R.jar
+│   │   │   ├── desugar_graph
+│   │   │   │   └── debug
+│   │   │   │       └── out
+│   │   │   │           └── currentProject
+│   │   │   │               ├── dirs_bucket_0
+│   │   │   │               │   └── graph.bin
+│   │   │   │               ├── dirs_bucket_1
+│   │   │   │               │   └── graph.bin
+│   │   │   │               ├── jar_f67693f2f6af02228a2ba0ca3325667e36db74215c8366fb70f1349120de2009_bucket_0
+│   │   │   │               │   └── graph.bin
+│   │   │   │               └── jar_f67693f2f6af02228a2ba0ca3325667e36db74215c8366fb70f1349120de2009_bucket_1
+│   │   │   │                   └── graph.bin
+│   │   │   ├── dex
+│   │   │   │   └── debug
+│   │   │   │       ├── mergeExtDexDebug
+│   │   │   │       │   └── classes.dex
+│   │   │   │       └── mergeProjectDexDebug
+│   │   │   │           ├── 0
+│   │   │   │           │   └── classes.dex
+│   │   │   │           └── 8
+│   │   │   │               └── classes.dex
+│   │   │   ├── dex_archive_input_jar_hashes
+│   │   │   │   └── debug
+│   │   │   │       └── out
+│   │   │   ├── dex_number_of_buckets_file
+│   │   │   │   └── debug
+│   │   │   │       └── out
+│   │   │   ├── incremental
+│   │   │   │   ├── debug
+│   │   │   │   │   ├── mergeDebugResources
+│   │   │   │   │   │   ├── compile-file-map.properties
+│   │   │   │   │   │   └── merger.xml
+│   │   │   │   │   └── packageDebugResources
+│   │   │   │   │       ├── compile-file-map.properties
+│   │   │   │   │       └── merger.xml
+│   │   │   │   ├── debug-mergeJavaRes
+│   │   │   │   │   ├── merge-state
+│   │   │   │   │   └── zip-cache
+│   │   │   │   │       ├── 0yOs7IOxM9mjbzjIqFJyoC1YX6o=
+│   │   │   │   │       ├── 2cc1H83+zHTO+W_nI421Ab94z14=
+│   │   │   │   │       ├── 3ZlFu4L6MgtyruCeOBchOSqga7s=
+│   │   │   │   │       ├── 4AUq4pOayxtkUYs4N6Z6zC11uho=
+│   │   │   │   │       ├── 4fSk2fXL7AWwjlSx2LZf56vxUeQ=
+│   │   │   │   │       ├── 64v6bHOIN2OasZS1OsTwngXsJGs=
+│   │   │   │   │       ├── 8XRh9ts9gtNrapUdgJaaDyqLSwA=
+│   │   │   │   │       ├── 900Gp+on_H+I1z1q0fihIq4eUpI=
+│   │   │   │   │       ├── A0+OrWxl1OG38Or6TSni+CyaoMs=
+│   │   │   │   │       ├── BBN68AnJiVMcIk+Ij1vlcZRvW5Y=
+│   │   │   │   │       ├── BHa_HaBRKwP1QS4X5WL3IBh81vg=
+│   │   │   │   │       ├── Ekg1W4cMAb138vQNoZP3V2XJfJ0=
+│   │   │   │   │       ├── F807b2qMnhbNArgyAbTkcpLo1Bc=
+│   │   │   │   │       ├── FrmsgH6V_vhtqgsJb+vJaavBVK4=
+│   │   │   │   │       ├── HAHMQR25pvwdDCpMYTNMR1xG8Ok=
+│   │   │   │   │       ├── HKotNyVBhgdCLsjWlG95DRr_9zE=
+│   │   │   │   │       ├── IG2dKaHjJDBMu8WgEOVh8IrAs3k=
+│   │   │   │   │       ├── IwXUAME9UYZTRtJ13ed_8rTZxmw=
+│   │   │   │   │       ├── MR8AqgtjwlhjVCsxcwz7RW82CME=
+│   │   │   │   │       ├── Pf_QVkdFa1qWUYOiE7yBnUDLlGg=
+│   │   │   │   │       ├── QW3ex+QwP3hH7Zuvhueed_foLJo=
+│   │   │   │   │       ├── RBHOOWlMesDx9p29TC4WbaZaPes=
+│   │   │   │   │       ├── S63DjbSK_TWe3XChKyaOOcNqHXM=
+│   │   │   │   │       ├── TEEFkm3HqiTwXO8lRkH8+rgUmj8=
+│   │   │   │   │       ├── TurixTejngW_khNOdUsifmHZk9Q=
+│   │   │   │   │       ├── Ude3HKEjaXGl1KGzIc_nITD2PDo=
+│   │   │   │   │       ├── VeVWguuteWPUrrZWvD_CH4OxMgk=
+│   │   │   │   │       ├── WWYtOIb+ugDJZxLIx2LCTJnppZw=
+│   │   │   │   │       ├── XQHRdCjgrlYXXjtr2FP3ztqat7U=
+│   │   │   │   │       ├── YJ16IapOyDhKdH8QyfradNBwAkQ=
+│   │   │   │   │       ├── aHBL1Xk_353C+iD4+VVyvDHF7_s=
+│   │   │   │   │       ├── agAVlkOKmZK79eoxMa34B1E5kT0=
+│   │   │   │   │       ├── akWyuc0m1F6qrkjtMs5JCfJuMc4=
+│   │   │   │   │       ├── b3DZlsOzh61ypBI2WnS+HdRPIZE=
+│   │   │   │   │       ├── bAzlKfiQHtkZE0NFRPilDcmVFxg=
+│   │   │   │   │       ├── bbiGkumhXyhlnf3mJiOM0XnJwJ4=
+│   │   │   │   │       ├── dysOV+qpgKvJM0WWa79oafffrck=
+│   │   │   │   │       ├── ffy4tNH2F84GdIo69SUVZ0PVVZ4=
+│   │   │   │   │       ├── fi73+xY1+EswE+wVvDqZLJYIXgw=
+│   │   │   │   │       ├── h1INd8DCyaOwwC1qIOZOLxVYLf4=
+│   │   │   │   │       ├── iDWQT37zf3FMaaPZieT88MmnQzs=
+│   │   │   │   │       ├── ktTBcI7O5yvcnFLnIIRMNqzKW3I=
+│   │   │   │   │       ├── l4q9I7TFNRE+yshuDDQomI3fWfE=
+│   │   │   │   │       ├── mwTSXLLR3tW_Rd7maF5PcHtem+s=
+│   │   │   │   │       ├── oS008NWicNlxH+1_g0XxtmLcy4w=
+│   │   │   │   │       ├── qFsHrqBOCtKlQrnEvczQORIPzpU=
+│   │   │   │   │       ├── q_AFu2_XkWmSA1FCEuNb1hIvedk=
+│   │   │   │   │       ├── qnUJB6XGbpDOwHzo48d8i1CKyqk=
+│   │   │   │   │       ├── vin+RrrfKKzcbDx0uCPVTF0ku9I=
+│   │   │   │   │       ├── vnpV8VdmcbOfJejmBHWKqJPWH6M=
+│   │   │   │   │       ├── w7gs1Es7PNw7tTzidsmnwQeI9EQ=
+│   │   │   │   │       ├── xiuEgfkdvxIXuIRsv0XPLW8GJTk=
+│   │   │   │   │       ├── yAfqvMh4aTq7nILUofiIzmf2TRM=
+│   │   │   │   │       ├── yFSeZZgjyagh8XOdjyIBe6YGftw=
+│   │   │   │   │       ├── z9p1s_Je_4bohOUyvjgDgawbN_Q=
+│   │   │   │   │       ├── zqRujIxW7m2I34SPqvio6QOTHGA=
+│   │   │   │   │       └── zwuJO4O4r8L_OL49Tme_YGadeo4=
+│   │   │   │   ├── mergeDebugAssets
+│   │   │   │   │   └── merger.xml
+│   │   │   │   ├── mergeDebugJniLibFolders
+│   │   │   │   │   └── merger.xml
+│   │   │   │   ├── mergeDebugShaders
+│   │   │   │   │   └── merger.xml
+│   │   │   │   ├── packageDebug
+│   │   │   │   │   └── tmp
+│   │   │   │   │       └── debug
+│   │   │   │   │           ├── dex-renamer-state.txt
+│   │   │   │   │           └── zip-cache
+│   │   │   │   │               ├── androidResources
+│   │   │   │   │               └── javaResources0
+│   │   │   │   └── processDebugResources
+│   │   │   │       └── resources-list-for-resources-debug.ap_.txt
+│   │   │   ├── javac
+│   │   │   │   └── debug
+│   │   │   │       └── classes
+│   │   │   │           └── com
+│   │   │   │               └── hydrogen
+│   │   │   │                   └── dockbar
+│   │   │   │                       ├── BootReceiver.class
+│   │   │   │                       ├── FloatingIconService.class
+│   │   │   │                       └── MainActivity.class
+│   │   │   ├── local_only_symbol_list
+│   │   │   │   └── debug
+│   │   │   │       └── R-def.txt
+│   │   │   ├── manifest_merge_blame_file
+│   │   │   │   └── debug
+│   │   │   │       └── manifest-merger-blame-debug-report.txt
+│   │   │   ├── merged_java_res
+│   │   │   │   └── debug
+│   │   │   │       └── base.jar
+│   │   │   ├── merged_manifest
+│   │   │   │   └── debug
+│   │   │   │       └── AndroidManifest.xml
+│   │   │   ├── merged_manifests
+│   │   │   │   └── debug
+│   │   │   │       ├── AndroidManifest.xml
+│   │   │   │       └── output-metadata.json
+│   │   │   ├── merged_res
+│   │   │   │   └── debug
+│   │   │   │       ├── layout_activity_main.xml.flat
+│   │   │   │       ├── layout_floating_dockbar.xml.flat
+│   │   │   │       ├── mipmap-anydpi-v26_ic_launcher.xml.flat
+│   │   │   │       ├── mipmap-anydpi-v26_ic_launcher_round.xml.flat
+│   │   │   │       ├── values-af_values-af.arsc.flat
+│   │   │   │       ├── values-am_values-am.arsc.flat
+│   │   │   │       ├── values-ar_values-ar.arsc.flat
+│   │   │   │       ├── values-as_values-as.arsc.flat
+│   │   │   │       ├── values-az_values-az.arsc.flat
+│   │   │   │       ├── values-b+es+419_values-b+es+419.arsc.flat
+│   │   │   │       ├── values-b+sr+Latn_values-b+sr+Latn.arsc.flat
+│   │   │   │       ├── values-be_values-be.arsc.flat
+│   │   │   │       ├── values-bg_values-bg.arsc.flat
+│   │   │   │       ├── values-bn_values-bn.arsc.flat
+│   │   │   │       ├── values-bs_values-bs.arsc.flat
+│   │   │   │       ├── values-ca_values-ca.arsc.flat
+│   │   │   │       ├── values-cs_values-cs.arsc.flat
+│   │   │   │       ├── values-da_values-da.arsc.flat
+│   │   │   │       ├── values-de_values-de.arsc.flat
+│   │   │   │       ├── values-el_values-el.arsc.flat
+│   │   │   │       ├── values-en-rAU_values-en-rAU.arsc.flat
+│   │   │   │       ├── values-en-rCA_values-en-rCA.arsc.flat
+│   │   │   │       ├── values-en-rGB_values-en-rGB.arsc.flat
+│   │   │   │       ├── values-en-rIN_values-en-rIN.arsc.flat
+│   │   │   │       ├── values-en-rXC_values-en-rXC.arsc.flat
+│   │   │   │       ├── values-es-rUS_values-es-rUS.arsc.flat
+│   │   │   │       ├── values-es_values-es.arsc.flat
+│   │   │   │       ├── values-et_values-et.arsc.flat
+│   │   │   │       ├── values-eu_values-eu.arsc.flat
+│   │   │   │       ├── values-fa_values-fa.arsc.flat
+│   │   │   │       ├── values-fi_values-fi.arsc.flat
+│   │   │   │       ├── values-fr-rCA_values-fr-rCA.arsc.flat
+│   │   │   │       ├── values-fr_values-fr.arsc.flat
+│   │   │   │       ├── values-gl_values-gl.arsc.flat
+│   │   │   │       ├── values-gu_values-gu.arsc.flat
+│   │   │   │       ├── values-h320dp-port-v13_values-h320dp-port-v13.arsc.flat
+│   │   │   │       ├── values-h360dp-land-v13_values-h360dp-land-v13.arsc.flat
+│   │   │   │       ├── values-h480dp-land-v13_values-h480dp-land-v13.arsc.flat
+│   │   │   │       ├── values-h550dp-port-v13_values-h550dp-port-v13.arsc.flat
+│   │   │   │       ├── values-h720dp-v13_values-h720dp-v13.arsc.flat
+│   │   │   │       ├── values-hdpi-v4_values-hdpi-v4.arsc.flat
+│   │   │   │       ├── values-hi_values-hi.arsc.flat
+│   │   │   │       ├── values-hr_values-hr.arsc.flat
+│   │   │   │       ├── values-hu_values-hu.arsc.flat
+│   │   │   │       ├── values-hy_values-hy.arsc.flat
+│   │   │   │       ├── values-in_values-in.arsc.flat
+│   │   │   │       ├── values-is_values-is.arsc.flat
+│   │   │   │       ├── values-it_values-it.arsc.flat
+│   │   │   │       ├── values-iw_values-iw.arsc.flat
+│   │   │   │       ├── values-ja_values-ja.arsc.flat
+│   │   │   │       ├── values-ka_values-ka.arsc.flat
+│   │   │   │       ├── values-kk_values-kk.arsc.flat
+│   │   │   │       ├── values-km_values-km.arsc.flat
+│   │   │   │       ├── values-kn_values-kn.arsc.flat
+│   │   │   │       ├── values-ko_values-ko.arsc.flat
+│   │   │   │       ├── values-ky_values-ky.arsc.flat
+│   │   │   │       ├── values-land_values-land.arsc.flat
+│   │   │   │       ├── values-large-v4_values-large-v4.arsc.flat
+│   │   │   │       ├── values-ldltr-v21_values-ldltr-v21.arsc.flat
+│   │   │   │       ├── values-ldrtl-v17_values-ldrtl-v17.arsc.flat
+│   │   │   │       ├── values-lo_values-lo.arsc.flat
+│   │   │   │       ├── values-lt_values-lt.arsc.flat
+│   │   │   │       ├── values-lv_values-lv.arsc.flat
+│   │   │   │       ├── values-mk_values-mk.arsc.flat
+│   │   │   │       ├── values-ml_values-ml.arsc.flat
+│   │   │   │       ├── values-mn_values-mn.arsc.flat
+│   │   │   │       ├── values-mr_values-mr.arsc.flat
+│   │   │   │       ├── values-ms_values-ms.arsc.flat
+│   │   │   │       ├── values-my_values-my.arsc.flat
+│   │   │   │       ├── values-nb_values-nb.arsc.flat
+│   │   │   │       ├── values-ne_values-ne.arsc.flat
+│   │   │   │       ├── values-night-v8_values-night-v8.arsc.flat
+│   │   │   │       ├── values-nl_values-nl.arsc.flat
+│   │   │   │       ├── values-or_values-or.arsc.flat
+│   │   │   │       ├── values-pa_values-pa.arsc.flat
+│   │   │   │       ├── values-pl_values-pl.arsc.flat
+│   │   │   │       ├── values-port_values-port.arsc.flat
+│   │   │   │       ├── values-pt-rBR_values-pt-rBR.arsc.flat
+│   │   │   │       ├── values-pt-rPT_values-pt-rPT.arsc.flat
+│   │   │   │       ├── values-pt_values-pt.arsc.flat
+│   │   │   │       ├── values-ro_values-ro.arsc.flat
+│   │   │   │       ├── values-ru_values-ru.arsc.flat
+│   │   │   │       ├── values-si_values-si.arsc.flat
+│   │   │   │       ├── values-sk_values-sk.arsc.flat
+│   │   │   │       ├── values-sl_values-sl.arsc.flat
+│   │   │   │       ├── values-small-v4_values-small-v4.arsc.flat
+│   │   │   │       ├── values-sq_values-sq.arsc.flat
+│   │   │   │       ├── values-sr_values-sr.arsc.flat
+│   │   │   │       ├── values-sv_values-sv.arsc.flat
+│   │   │   │       ├── values-sw600dp-v13_values-sw600dp-v13.arsc.flat
+│   │   │   │       ├── values-sw_values-sw.arsc.flat
+│   │   │   │       ├── values-ta_values-ta.arsc.flat
+│   │   │   │       ├── values-te_values-te.arsc.flat
+│   │   │   │       ├── values-th_values-th.arsc.flat
+│   │   │   │       ├── values-tl_values-tl.arsc.flat
+│   │   │   │       ├── values-tr_values-tr.arsc.flat
+│   │   │   │       ├── values-uk_values-uk.arsc.flat
+│   │   │   │       ├── values-ur_values-ur.arsc.flat
+│   │   │   │       ├── values-uz_values-uz.arsc.flat
+│   │   │   │       ├── values-v16_values-v16.arsc.flat
+│   │   │   │       ├── values-v17_values-v17.arsc.flat
+│   │   │   │       ├── values-v18_values-v18.arsc.flat
+│   │   │   │       ├── values-v21_values-v21.arsc.flat
+│   │   │   │       ├── values-v22_values-v22.arsc.flat
+│   │   │   │       ├── values-v23_values-v23.arsc.flat
+│   │   │   │       ├── values-v24_values-v24.arsc.flat
+│   │   │   │       ├── values-v25_values-v25.arsc.flat
+│   │   │   │       ├── values-v26_values-v26.arsc.flat
+│   │   │   │       ├── values-v28_values-v28.arsc.flat
+│   │   │   │       ├── values-v31_values-v31.arsc.flat
+│   │   │   │       ├── values-vi_values-vi.arsc.flat
+│   │   │   │       ├── values-w320dp-land-v13_values-w320dp-land-v13.arsc.flat
+│   │   │   │       ├── values-w360dp-port-v13_values-w360dp-port-v13.arsc.flat
+│   │   │   │       ├── values-w480dp-port-v13_values-w480dp-port-v13.arsc.flat
+│   │   │   │       ├── values-w600dp-land-v13_values-w600dp-land-v13.arsc.flat
+│   │   │   │       ├── values-watch-v20_values-watch-v20.arsc.flat
+│   │   │   │       ├── values-watch-v21_values-watch-v21.arsc.flat
+│   │   │   │       ├── values-xlarge-v4_values-xlarge-v4.arsc.flat
+│   │   │   │       ├── values-zh-rCN_values-zh-rCN.arsc.flat
+│   │   │   │       ├── values-zh-rHK_values-zh-rHK.arsc.flat
+│   │   │   │       ├── values-zh-rTW_values-zh-rTW.arsc.flat
+│   │   │   │       ├── values-zu_values-zu.arsc.flat
+│   │   │   │       └── values_values.arsc.flat
+│   │   │   ├── merged_res_blame_folder
+│   │   │   │   └── debug
+│   │   │   │       └── out
+│   │   │   │           ├── multi-v2
+│   │   │   │           │   ├── debug.json
+│   │   │   │           │   ├── values-af.json
+│   │   │   │           │   ├── values-am.json
+│   │   │   │           │   ├── values-ar.json
+│   │   │   │           │   ├── values-as.json
+│   │   │   │           │   ├── values-az.json
+│   │   │   │           │   ├── values-b+es+419.json
+│   │   │   │           │   ├── values-b+sr+Latn.json
+│   │   │   │           │   ├── values-be.json
+│   │   │   │           │   ├── values-bg.json
+│   │   │   │           │   ├── values-bn.json
+│   │   │   │           │   ├── values-bs.json
+│   │   │   │           │   ├── values-ca.json
+│   │   │   │           │   ├── values-cs.json
+│   │   │   │           │   ├── values-da.json
+│   │   │   │           │   ├── values-de.json
+│   │   │   │           │   ├── values-el.json
+│   │   │   │           │   ├── values-en-rAU.json
+│   │   │   │           │   ├── values-en-rCA.json
+│   │   │   │           │   ├── values-en-rGB.json
+│   │   │   │           │   ├── values-en-rIN.json
+│   │   │   │           │   ├── values-en-rXC.json
+│   │   │   │           │   ├── values-es-rUS.json
+│   │   │   │           │   ├── values-es.json
+│   │   │   │           │   ├── values-et.json
+│   │   │   │           │   ├── values-eu.json
+│   │   │   │           │   ├── values-fa.json
+│   │   │   │           │   ├── values-fi.json
+│   │   │   │           │   ├── values-fr-rCA.json
+│   │   │   │           │   ├── values-fr.json
+│   │   │   │           │   ├── values-gl.json
+│   │   │   │           │   ├── values-gu.json
+│   │   │   │           │   ├── values-h320dp-port-v13.json
+│   │   │   │           │   ├── values-h360dp-land-v13.json
+│   │   │   │           │   ├── values-h480dp-land-v13.json
+│   │   │   │           │   ├── values-h550dp-port-v13.json
+│   │   │   │           │   ├── values-h720dp-v13.json
+│   │   │   │           │   ├── values-hdpi-v4.json
+│   │   │   │           │   ├── values-hi.json
+│   │   │   │           │   ├── values-hr.json
+│   │   │   │           │   ├── values-hu.json
+│   │   │   │           │   ├── values-hy.json
+│   │   │   │           │   ├── values-in.json
+│   │   │   │           │   ├── values-is.json
+│   │   │   │           │   ├── values-it.json
+│   │   │   │           │   ├── values-iw.json
+│   │   │   │           │   ├── values-ja.json
+│   │   │   │           │   ├── values-ka.json
+│   │   │   │           │   ├── values-kk.json
+│   │   │   │           │   ├── values-km.json
+│   │   │   │           │   ├── values-kn.json
+│   │   │   │           │   ├── values-ko.json
+│   │   │   │           │   ├── values-ky.json
+│   │   │   │           │   ├── values-land.json
+│   │   │   │           │   ├── values-large-v4.json
+│   │   │   │           │   ├── values-ldltr-v21.json
+│   │   │   │           │   ├── values-ldrtl-v17.json
+│   │   │   │           │   ├── values-lo.json
+│   │   │   │           │   ├── values-lt.json
+│   │   │   │           │   ├── values-lv.json
+│   │   │   │           │   ├── values-mk.json
+│   │   │   │           │   ├── values-ml.json
+│   │   │   │           │   ├── values-mn.json
+│   │   │   │           │   ├── values-mr.json
+│   │   │   │           │   ├── values-ms.json
+│   │   │   │           │   ├── values-my.json
+│   │   │   │           │   ├── values-nb.json
+│   │   │   │           │   ├── values-ne.json
+│   │   │   │           │   ├── values-night-v8.json
+│   │   │   │           │   ├── values-nl.json
+│   │   │   │           │   ├── values-or.json
+│   │   │   │           │   ├── values-pa.json
+│   │   │   │           │   ├── values-pl.json
+│   │   │   │           │   ├── values-port.json
+│   │   │   │           │   ├── values-pt-rBR.json
+│   │   │   │           │   ├── values-pt-rPT.json
+│   │   │   │           │   ├── values-pt.json
+│   │   │   │           │   ├── values-ro.json
+│   │   │   │           │   ├── values-ru.json
+│   │   │   │           │   ├── values-si.json
+│   │   │   │           │   ├── values-sk.json
+│   │   │   │           │   ├── values-sl.json
+│   │   │   │           │   ├── values-small-v4.json
+│   │   │   │           │   ├── values-sq.json
+│   │   │   │           │   ├── values-sr.json
+│   │   │   │           │   ├── values-sv.json
+│   │   │   │           │   ├── values-sw.json
+│   │   │   │           │   ├── values-sw600dp-v13.json
+│   │   │   │           │   ├── values-ta.json
+│   │   │   │           │   ├── values-te.json
+│   │   │   │           │   ├── values-th.json
+│   │   │   │           │   ├── values-tl.json
+│   │   │   │           │   ├── values-tr.json
+│   │   │   │           │   ├── values-uk.json
+│   │   │   │           │   ├── values-ur.json
+│   │   │   │           │   ├── values-uz.json
+│   │   │   │           │   ├── values-v16.json
+│   │   │   │           │   ├── values-v17.json
+│   │   │   │           │   ├── values-v18.json
+│   │   │   │           │   ├── values-v21.json
+│   │   │   │           │   ├── values-v22.json
+│   │   │   │           │   ├── values-v23.json
+│   │   │   │           │   ├── values-v24.json
+│   │   │   │           │   ├── values-v25.json
+│   │   │   │           │   ├── values-v26.json
+│   │   │   │           │   ├── values-v28.json
+│   │   │   │           │   ├── values-v31.json
+│   │   │   │           │   ├── values-vi.json
+│   │   │   │           │   ├── values-w320dp-land-v13.json
+│   │   │   │           │   ├── values-w360dp-port-v13.json
+│   │   │   │           │   ├── values-w480dp-port-v13.json
+│   │   │   │           │   ├── values-w600dp-land-v13.json
+│   │   │   │           │   ├── values-watch-v20.json
+│   │   │   │           │   ├── values-watch-v21.json
+│   │   │   │           │   ├── values-xlarge-v4.json
+│   │   │   │           │   ├── values-zh-rCN.json
+│   │   │   │           │   ├── values-zh-rHK.json
+│   │   │   │           │   ├── values-zh-rTW.json
+│   │   │   │           │   ├── values-zu.json
+│   │   │   │           │   └── values.json
+│   │   │   │           └── single
+│   │   │   │               └── debug.json
+│   │   │   ├── navigation_json
+│   │   │   │   └── debug
+│   │   │   │       └── navigation.json
+│   │   │   ├── packaged_manifests
+│   │   │   │   └── debug
+│   │   │   │       ├── AndroidManifest.xml
+│   │   │   │       └── output-metadata.json
+│   │   │   ├── packaged_res
+│   │   │   │   └── debug
+│   │   │   │       ├── layout
+│   │   │   │       │   ├── activity_main.xml
+│   │   │   │       │   └── floating_dockbar.xml
+│   │   │   │       ├── mipmap-anydpi-v26
+│   │   │   │       │   ├── ic_launcher.xml
+│   │   │   │       │   └── ic_launcher_round.xml
+│   │   │   │       └── values
+│   │   │   │           └── values.xml
+│   │   │   ├── processed_res
+│   │   │   │   └── debug
+│   │   │   │       └── out
+│   │   │   │           ├── output-metadata.json
+│   │   │   │           └── resources-debug.ap_
+│   │   │   ├── project_dex_archive
+│   │   │   │   └── debug
+│   │   │   │       └── out
+│   │   │   │           ├── 67bef2116eccf460fbc2889910fe86698fc1769124778821d27e915bf5e84bac_0.jar
+│   │   │   │           ├── 67bef2116eccf460fbc2889910fe86698fc1769124778821d27e915bf5e84bac_1.jar
+│   │   │   │           └── com
+│   │   │   │               └── hydrogen
+│   │   │   │                   └── dockbar
+│   │   │   │                       ├── BootReceiver.dex
+│   │   │   │                       ├── FloatingIconService.dex
+│   │   │   │                       └── MainActivity.dex
+│   │   │   ├── runtime_symbol_list
+│   │   │   │   └── debug
+│   │   │   │       └── R.txt
+│   │   │   ├── signing_config_versions
+│   │   │   │   └── debug
+│   │   │   │       └── signing-config-versions.json
+│   │   │   ├── source_set_path_map
+│   │   │   │   └── debug
+│   │   │   │       └── file-map.txt
+│   │   │   └── symbol_list_with_package_name
+│   │   │       └── debug
+│   │   │           └── package-aware-r.txt
+│   │   ├── outputs
+│   │   │   ├── apk
+│   │   │   │   └── debug
+│   │   │   │       ├── app-debug.apk
+│   │   │   │       └── output-metadata.json
+│   │   │   └── logs
+│   │   │       └── manifest-merger-debug-report.txt
+│   │   └── tmp
+│   │       └── compileDebugJavaWithJavac
+│   │           ├── compileTransaction
+│   │           │   └── stash-dir
+│   │           │       ├── BootReceiver.class.uniqueId2
+│   │           │       ├── FloatingIconService.class.uniqueId0
+│   │           │       └── MainActivity.class.uniqueId1
+│   │           └── previous-compilation-data.bin
+│   ├── build.gradle
+│   ├── proguard-rules.pro
+│   └── src
+│       └── main
+│           ├── AndroidManifest.xml
+│           ├── java
+│           │   └── com
+│           │       └── hydrogen
+│           │           └── dockbar
+│           │               ├── BootReceiver.java
+│           │               ├── FloatingIconService.java
+│           │               └── MainActivity.java
+│           └── res
+│               ├── layout
+│               │   ├── activity_main.xml
+│               │   └── floating_dockbar.xml
+│               ├── mipmap-anydpi-v26
+│               │   ├── ic_launcher.xml
+│               │   └── ic_launcher_round.xml
+│               └── values
+│                   ├── colors.xml
+│                   ├── strings.xml
+│                   └── themes.xml
+├── app-debug.apk
+├── app_config.txt
+├── build.gradle
+├── gradle
+│   └── wrapper
+│       └── gradle-wrapper.properties
+├── gradle.properties
+├── gradlew.bat
+└── settings.gradle
+
+================================================================================
+代码文件内容
+================================================================================
+
+## 文件: app/build/generated/source/buildConfig/debug/com/hydrogen/dockbar/BuildConfig.java
+```java
+/**
+ * Automatically generated file. DO NOT MODIFY
+ */
+package com.hydrogen.dockbar;
+
+public final class BuildConfig {
+  public static final boolean DEBUG = Boolean.parseBoolean("true");
+  public static final String APPLICATION_ID = "com.hydrogen.dockbar";
+  public static final String BUILD_TYPE = "debug";
+  public static final int VERSION_CODE = 1;
+  public static final String VERSION_NAME = "1.0";
+}
+```
+
+## 文件: app/src/main/java/com/hydrogen/dockbar/BootReceiver.java
+```java
+package com.hydrogen.dockbar;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+
+public class BootReceiver extends BroadcastReceiver {
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        if (Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction())) {
+            Intent serviceIntent = new Intent(context, FloatingIconService.class);
+            context.startService(serviceIntent);
+        }
+    }
+}
+```
+
+## 文件: app/src/main/java/com/hydrogen/dockbar/FloatingIconService.java
+```java
+package com.hydrogen.dockbar;
+
+import android.app.Service;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.PixelFormat;
+import android.os.IBinder;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.ImageButton;
+import android.widget.Toast;
+
+public class FloatingIconService extends Service {
+
+    private WindowManager windowManager;
+    private View floatingView;
+    private SharedPreferences prefs;
+
+    private String[] defaultPackages = {
+            "com.google.android.apps.maps",  // 导航
+            "com.google.android.music",     // 音乐
+            "com.android.dialer",            // 电话
+            "com.android.settings"           // 设置
+    };
+
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        prefs = getSharedPreferences("dockbar_config", MODE_PRIVATE);
+        createFloatingView();
+        Toast.makeText(this, "悬浮栏已启动", Toast.LENGTH_SHORT).show();
+    }
+
+    private void createFloatingView() {
+        windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+        floatingView = LayoutInflater.from(this).inflate(R.layout.floating_dockbar, null);
+
+        final WindowManager.LayoutParams params = new WindowManager.LayoutParams(
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                PixelFormat.TRANSLUCENT);
+
+        params.gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
+        params.x = 0;
+        params.y = 0;
+
+        windowManager.addView(floatingView, params);
+        setupButtons();
+    }
+
+    private void setupButtons() {
+        ImageButton navBtn = floatingView.findViewById(R.id.btn_nav);
+        ImageButton musicBtn = floatingView.findViewById(R.id.btn_music);
+        ImageButton phoneBtn = floatingView.findViewById(R.id.btn_phone);
+        ImageButton settingsBtn = floatingView.findViewById(R.id.btn_settings);
+        ImageButton appManagerBtn = floatingView.findViewById(R.id.btn_app_manager);
+
+        String navPkg = prefs.getString("nav_pkg", defaultPackages[0]);
+        String musicPkg = prefs.getString("music_pkg", defaultPackages[1]);
+        String phonePkg = prefs.getString("phone_pkg", defaultPackages[2]);
+        String settingsPkg = prefs.getString("settings_pkg", defaultPackages[3]);
+
+        navBtn.setOnClickListener(v -> launchApp(navPkg));
+        musicBtn.setOnClickListener(v -> launchApp(musicPkg));
+        phoneBtn.setOnClickListener(v -> launchApp(phonePkg));
+        settingsBtn.setOnClickListener(v -> launchApp(settingsPkg));
+        appManagerBtn.setOnClickListener(v -> openSettingsActivity());
+    }
+
+    private void launchApp(String packageName) {
+        Intent intent = getPackageManager().getLaunchIntentForPackage(packageName);
+        if (intent != null) {
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "未找到应用: " + packageName, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void openSettingsActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra("from_floating_bar", true);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (floatingView != null) {
+            windowManager.removeView(floatingView);
+        }
+        Toast.makeText(this, "悬浮栏已关闭", Toast.LENGTH_SHORT).show();
+    }
+}
+```
+
+## 文件: app/src/main/java/com/hydrogen/dockbar/MainActivity.java
+```java
+package com.hydrogen.dockbar;
+
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.provider.Settings;
+import android.widget.Button;
+import android.widget.Toast;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    private static final int REQUEST_OVERLAY_PERMISSION = 1234;
+    private static final int REQUEST_PICK_APP = 5678;
+
+    private String pendingConfigKey;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        boolean fromFloatingBar = getIntent().getBooleanExtra("from_floating_bar", false);
+
+        if (!fromFloatingBar && checkOverlayPermissionAndStartService()) {
+            moveTaskToBack(true);
+            return;
+        }
+
+        setupButtons();
+    }
+
+    private boolean checkOverlayPermissionAndStartService() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (!Settings.canDrawOverlays(this)) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                        Uri.parse("package:" + getPackageName()));
+                startActivityForResult(intent, REQUEST_OVERLAY_PERMISSION);
+                return false;
+            }
+        }
+        startFloatingService();
+        return true;
+    }
+
+    private void startFloatingService() {
+        Intent serviceIntent = new Intent(this, FloatingIconService.class);
+        startService(serviceIntent);
+    }
+
+    private void setupButtons() {
+        Button btnNav = findViewById(R.id.btn_config_nav);
+        Button btnMusic = findViewById(R.id.btn_config_music);
+        Button btnPhone = findViewById(R.id.btn_config_phone);
+        Button btnSettings = findViewById(R.id.btn_config_settings);
+        Button btnRestart = findViewById(R.id.btn_restart_service);
+
+        btnNav.setOnClickListener(v -> pickAppFor("nav_pkg", btnNav));
+        btnMusic.setOnClickListener(v -> pickAppFor("music_pkg", btnMusic));
+        btnPhone.setOnClickListener(v -> pickAppFor("phone_pkg", btnPhone));
+        btnSettings.setOnClickListener(v -> pickAppFor("settings_pkg", btnSettings));
+
+        btnRestart.setOnClickListener(v -> {
+            stopService(new Intent(this, FloatingIconService.class));
+            startService(new Intent(this, FloatingIconService.class));
+            Toast.makeText(this, "悬浮栏已重启", Toast.LENGTH_SHORT).show();
+        });
+    }
+
+    private void pickAppFor(String key, Button button) {
+        pendingConfigKey = key;
+        Intent intent = new Intent(Intent.ACTION_PICK_ACTIVITY);
+        intent.putExtra(Intent.EXTRA_INTENT, new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER));
+        startActivityForResult(intent, REQUEST_PICK_APP);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_OVERLAY_PERMISSION) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (Settings.canDrawOverlays(this)) {
+                    startFloatingService();
+                    moveTaskToBack(true);
+                } else {
+                    Toast.makeText(this, "需要悬浮窗权限才能使用", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+
+        if (requestCode == REQUEST_PICK_APP && resultCode == RESULT_OK) {
+            ComponentName component = data.getComponent();
+            String pkg = component.getPackageName();
+            getSharedPreferences("dockbar_config", MODE_PRIVATE).edit()
+                    .putString(pendingConfigKey, pkg).apply();
+            Toast.makeText(this, "已保存: " + pkg, Toast.LENGTH_SHORT).show();
+        }
+    }
+}
+```
+
+## 文件: 05-21.md
+```md
+既然不喜欢“侧滑呼出”那种复杂交互，只是想要“氢桌面”那种左边一排图标列在屏幕上、触手可及的简洁样子，那我们可以换一个更直接、更轻量的思路：**直接把图标栏做成一个永久悬浮的工具栏，贴在屏幕左侧边缘。**
+
+这样一来，核心逻辑就简化成了两个部分：**一个半透明的悬浮窗按钮栏，和一个简单的自启动服务**。
+
+下面是一个你可以直接复制给Trae的提示词，把“侧滑”的思路纠正成了悬浮快捷栏。里面的`你的应用1包名`和`你的应用2包名`是留给你自己填空的地方，按你之前的经验填上就行。
+
+***
+
+### 🧩 给AI的侧边栏任务指令
+
+#### 1. 项目目标
+
+开发一个Android App，实现以下功能：
+
+- 在屏幕左侧边缘显示一个**一直可见的、轻薄的图标栏**，和“氢桌面”左侧Dock栏的效果一样。
+- 无需任何滑动或点击开关，图标栏开机就常驻在屏幕上。
+- 点击每个图标，能直接启动你指定的车机应用（如导航、音乐等）。
+- App随车机启动自动运行，无需手动点击。
+
+#### 2. 简化方案（不依赖SmartSwipe库）
+
+- **不搞侧滑**：直接用一个`悬浮窗`的方式显示这个工具栏，UI布局就用`LinearLayout`竖直排列几个带图标的`ImageButton`。
+- **不搞复杂依赖**：不使用SmartSwipe等第三方库，就用Android原生方案，避免集成和兼容性问题。
+
+#### 3. 详细实现步骤
+
+**a) 添加权限**
+在`AndroidManifest.xml`中添加两个核心权限：
+
+- `SYSTEM_ALERT_WINDOW`：显示悬浮窗的权限。
+- `RECEIVE_BOOT_COMPLETED`：接收开机广播的权限。
+
+**b) 实现悬浮窗服务**
+
+- 创建一个继承自`Service`的类，名为`FloatingIconService`。
+- 在它的`onCreate()`或`onStartCommand()`里，利用`WindowManager`来添加一个自定义的悬浮布局。
+- 布局是一个水平或竖直排列的容器，里面放若干个按钮（根据你的需求数量来定）。
+
+**c) 图标与点击事件**
+
+- 在`FloatingIconService`中，为每个图标设置点击监听，然后用`Intent`启动对应的应用。参考代码：
+
+```java
+// 启动导航应用
+Button navBtn = findViewById(R.id.nav_btn);
+navBtn.setOnClickListener(v -> {
+    Intent intent = getPackageManager().getLaunchIntentForPackage("你的应用1包名");
+    if (intent != null) {
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+});
+
+// 启动音乐应用
+Button musicBtn = findViewById(R.id.music_btn);
+musicBtn.setOnClickListener(v -> {
+    Intent intent = getPackageManager().getLaunchIntentForPackage("你的应用2包名");
+    if (intent != null) {
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+});
+```
+
+> （这里自行替换`你的应用1包名`和`你的应用2包名`）
+
+**d) 设置悬浮窗参数**
+设置`WindowManager.LayoutParams`，让悬浮窗居于屏幕**左侧中间位置**，宽度自适应内容，高度根据按钮数量决定。
+
+- `type`：设置为`TYPE_APPLICATION_OVERLAY`（Android 8.0+通用）。
+- `flags`：设置为`FLAG_NOT_FOCUSABLE`，让触摸事件能穿透到悬浮窗下方的应用。
+
+**e) 开机自启**
+
+- 创建`BootReceiver`类，监听`BOOT_COMPLETED`广播。
+- 收到广播后，启动`FloatingIconService`即可。
+
+**f) 主界面**
+主`Activity`是一个空白页面，一启动就运行`FloatingIconService`，然后把自己最小化（`moveTaskToBack(true)`），这样开机后就不会有个碍眼的黑窗口挡住车机主界面了。
+
+#### 4. 给AI的最终要求
+
+- **不要**用SmartSwipe库，直接用Android原生`WindowManager`实现。
+- 图标包先使用系统自带的`@android:drawable/ic_menu_*`等占位图，方便后续替换。
+- 整个项目使用Java编写。
+- 最终产出：一个能直接安装运行的APK文件，和一个可以用Android Studio打开的项目源码压缩包。
+
+***
+
+这个方案完全去掉了“侧滑”这一步，直接改成悬浮图标栏，逻辑更符合你“氢桌面”和“自启动”的需求。把这个提示词发给AI，它应该能按你的要求生成一个更简洁直接的实现。
+```
+
+## 文件: build.gradle
+```gradle
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+```
+
+## 文件: gradle.properties
+```properties
+android.useAndroidX=true
+android.enableJetifier=true
+org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
+org.gradle.parallel=true
+```
+
+## 文件: gradlew.bat
+```bat
+@rem
+@rem Copyright 2015 the original author or authors.
+@rem
+@rem Licensed under the Apache License, Version 2.0 (the "License");
+@rem you may not use this file except in compliance with the License.
+@rem You may obtain a copy of the License at
+@rem
+@rem      https://www.apache.org/licenses/LICENSE-2.0
+@rem
+@rem Unless required by applicable law or agreed to in writing, software
+@rem distributed under the License is distributed on an "AS IS" BASIS,
+@rem WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+@rem See the License for the specific language governing permissions and
+@rem limitations under the License.
+@rem
+
+@if "%DEBUG%" == "" @echo off
+@rem ##########################################################################
+@rem
+@rem  Gradle startup script for Windows
+@rem
+@rem ##########################################################################
+
+@rem Set local scope for the variables with windows NT shell
+if "%OS%"=="Windows_NT" setlocal
+
+set DIRNAME=%~dp0
+if "%DIRNAME%" == "" set DIRNAME=.
+set APP_BASE_NAME=%~n0
+set APP_HOME=%DIRNAME%
+
+@rem Resolve any "." and ".." in APP_HOME to make it shorter.
+for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
+
+@rem Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
+set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m"
+
+@rem Find java.exe
+if defined JAVA_HOME goto findJavaFromJavaHome
+
+set JAVA_EXE=java.exe
+%JAVA_EXE% -version >NUL 2>&1
+if "%ERRORLEVEL%" == "0" goto execute
+
+echo.
+echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
+echo.
+echo Please set the JAVA_HOME variable in your environment to match the
+echo location of your Java installation.
+
+goto fail
+
+:findJavaFromJavaHome
+set JAVA_HOME=%JAVA_HOME:"=%
+set JAVA_EXE=%JAVA_HOME%/bin/java.exe
+
+if exist "%JAVA_EXE%" goto execute
+
+echo.
+echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME%
+echo.
+echo Please set the JAVA_HOME variable in your environment to match the
+echo location of your Java installation.
+
+goto fail
+
+:execute
+@rem Setup the command line
+
+set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
+
+
+@rem Execute Gradle
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GRADLE_OPTS% "-Dorg.gradle.appname=%APP_BASE_NAME%" -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %*
+
+:end
+@rem End local scope for the variables with windows NT shell
+if "%ERRORLEVEL%"=="0" goto mainEnd
+
+:fail
+rem Set variable GRADLE_EXIT_CONSOLE if you need the _script_ return code instead of
+rem the _cmd.exe /c_ return code!
+if  not "" == "%GRADLE_EXIT_CONSOLE%" exit 1
+exit /b 1
+
+:mainEnd
+if "%OS%"=="Windows_NT" endlocal
+
+:omega
+```
+
+## 文件: README.md
+```md
+# 氢桌面侧边栏 (Hydrogen DockBar)
+
+一个简单的Android应用，在屏幕左侧显示永久悬浮的快捷启动栏，类似氢桌面的效果。
+
+## 功能特点
+
+- 📱 左侧永久悬浮的图标栏
+- 🚀 一键启动常用应用（导航、音乐、电话、设置）
+- 🔄 开机自动启动
+- 💫 轻量简洁，不占用系统资源
+
+## 项目结构
+
+```
+f:\build_workspace\05-21\
+├── app/
+│   ├── src/
+│   │   └── main/
+│   │       ├── java/com/hydrogen/dockbar/
+│   │       │   ├── BootReceiver.java        # 开机自启动接收器
+│   │       │   ├── FloatingIconService.java # 悬浮窗服务
+│   │       │   └── MainActivity.java        # 主活动
+│   │       ├── res/
+│   │       │   ├── layout/
+│   │       │   │   ├── activity_main.xml
+│   │       │   │   └── floating_dockbar.xml
+│   │       │   └── values/
+│   │       │       ├── colors.xml
+│   │       │       ├── strings.xml
+│   │       │       └── themes.xml
+│   │       └── AndroidManifest.xml
+│   ├── build.gradle
+│   └── proguard-rules.pro
+├── gradle/
+├── build.gradle
+├── settings.gradle
+└── gradlew.bat
+```
+
+## 使用说明
+
+### 1. 打开项目
+
+使用 Android Studio 打开此项目。
+
+### 2. 构建和安装
+
+```bash
+# Windows系统
+gradlew.bat assembleDebug
+
+# 或者在Android Studio中直接点击 Run 按钮
+```
+
+### 3. 授予权限
+
+首次运行时，需要授予"悬浮窗"权限。
+
+### 4. 自定义应用包名
+
+在 `FloatingIconService.java` 中修改 `launchApp()` 调用的包名，以启动您想要的应用：
+
+```java
+navBtn.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        launchApp("com.your.app.package"); // 修改为您的应用包名
+    }
+});
+```
+
+## 技术实现
+
+- 使用 Android 原生的 `WindowManager` 实现悬浮窗
+- 使用 `Service` 实现后台运行
+- 使用 `BroadcastReceiver` 实现开机自启动
+- 最低支持 Android 5.0 (API 21)
+
+## 注意事项
+
+- 需要授予悬浮窗权限才能正常使用
+- 部分定制Android系统可能需要额外的自启动权限设置
+```
+
+## 文件: settings.gradle
+```gradle
+include ':app'
+rootProject.name = "HydrogenDockBar"
+```
+
+## 文件: .gradle/7.5/gc.properties
+```properties
+
+```
+
+## 文件: .gradle/8.9/gc.properties
+```properties
+
+```
+
+## 文件: .gradle/8.9/dependencies-accessors/gc.properties
+```properties
+
+```
+
+## 文件: .gradle/9.2.0/gc.properties
+```properties
+
+```
+
+## 文件: .gradle/buildOutputCleanup/cache.properties
+```properties
+#Thu May 21 08:45:16 CST 2026
+gradle.version=8.9
+```
+
+## 文件: .gradle/vcs-1/gc.properties
+```properties
+
+```
+
+## 文件: app/build.gradle
+```gradle
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.hydrogen.dockbar'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.hydrogen.dockbar"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+}
+```
+
+## 文件: app/proguard-rules.pro
+```pro
+# Add project specific ProGuard rules here.
+# You can control the set of applied configuration files using the
+# proguardFiles setting in build.gradle.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+# Uncomment this to preserve the line number information for
+# debugging stack traces.
+#-keepattributes SourceFile,LineNumberTable
+
+# If you keep the line number information, uncomment this to
+# hide the original source file name.
+#-renamesourcefileattribute SourceFile
+```
+
+## 文件: app/build/intermediates/app_metadata/debug/app-metadata.properties
+```properties
+appMetadataVersion=1.1
+androidGradlePluginVersion=8.1.0
+```
+
+## 文件: app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties
+```properties
+#Thu May 21 09:56:25 CST 2026
+com.hydrogen.dockbar.app-main-30\:/layout/activity_main.xml=F\:\\build_workspace\\05-21\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat
+com.hydrogen.dockbar.app-main-30\:/mipmap-anydpi-v26/ic_launcher_round.xml=F\:\\build_workspace\\05-21\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat
+com.hydrogen.dockbar.app-main-30\:/mipmap-anydpi-v26/ic_launcher.xml=F\:\\build_workspace\\05-21\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat
+com.hydrogen.dockbar.app-main-30\:/layout/floating_dockbar.xml=F\:\\build_workspace\\05-21\\app\\build\\intermediates\\merged_res\\debug\\layout_floating_dockbar.xml.flat
+```
+
+## 文件: app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+```properties
+#Thu May 21 09:56:25 CST 2026
+com.hydrogen.dockbar.app-main-5\:/layout/floating_dockbar.xml=F\:\\build_workspace\\05-21\\app\\build\\intermediates\\packaged_res\\debug\\layout\\floating_dockbar.xml
+com.hydrogen.dockbar.app-main-5\:/mipmap-anydpi-v26/ic_launcher.xml=F\:\\build_workspace\\05-21\\app\\build\\intermediates\\packaged_res\\debug\\mipmap-anydpi-v26\\ic_launcher.xml
+com.hydrogen.dockbar.app-main-5\:/mipmap-anydpi-v26/ic_launcher_round.xml=F\:\\build_workspace\\05-21\\app\\build\\intermediates\\packaged_res\\debug\\mipmap-anydpi-v26\\ic_launcher_round.xml
+com.hydrogen.dockbar.app-main-5\:/layout/activity_main.xml=F\:\\build_workspace\\05-21\\app\\build\\intermediates\\packaged_res\\debug\\layout\\activity_main.xml
+```
+
+## 文件: app/build/intermediates/merged_manifest/debug/AndroidManifest.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hydrogen.dockbar"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="34" />
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <permission
+        android:name="com.hydrogen.dockbar.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.hydrogen.dockbar.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:extractNativeLibs="true"
+        android:icon="@android:mipmap/sym_def_app_icon"
+        android:label="氢桌面侧边栏"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@android:mipmap/sym_def_app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HydrogenDockBar" >
+        <activity
+            android:name="com.hydrogen.dockbar.MainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.hydrogen.dockbar.FloatingIconService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.hydrogen.dockbar.BootReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.hydrogen.dockbar.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
+    </application>
+
+</manifest>
+```
+
+## 文件: app/build/intermediates/merged_manifests/debug/AndroidManifest.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hydrogen.dockbar"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="34" />
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <permission
+        android:name="com.hydrogen.dockbar.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.hydrogen.dockbar.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:extractNativeLibs="true"
+        android:icon="@android:mipmap/sym_def_app_icon"
+        android:label="氢桌面侧边栏"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@android:mipmap/sym_def_app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HydrogenDockBar" >
+        <activity
+            android:name="com.hydrogen.dockbar.MainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.hydrogen.dockbar.FloatingIconService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.hydrogen.dockbar.BootReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.hydrogen.dockbar.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
+    </application>
+
+</manifest>
+```
+
+## 文件: app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hydrogen.dockbar"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="34" />
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <permission
+        android:name="com.hydrogen.dockbar.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.hydrogen.dockbar.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:extractNativeLibs="true"
+        android:icon="@android:mipmap/sym_def_app_icon"
+        android:label="氢桌面侧边栏"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@android:mipmap/sym_def_app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HydrogenDockBar" >
+        <activity
+            android:name="com.hydrogen.dockbar.MainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.hydrogen.dockbar.FloatingIconService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.hydrogen.dockbar.BootReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.hydrogen.dockbar.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
+    </application>
+
+</manifest>
+```
+
+## 文件: app/build/intermediates/packaged_res/debug/layout/activity_main.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="悬浮栏配置"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btn_config_nav"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择导航应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_config_music"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择音乐应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_config_phone"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择电话应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_config_settings"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择设置应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btn_restart_service"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="重启悬浮栏"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
+```
+
+## 文件: app/src/main/AndroidManifest.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hydrogen.dockbar">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@android:mipmap/sym_def_app_icon"
+        android:label="氢桌面侧边栏"
+        android:roundIcon="@android:mipmap/sym_def_app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HydrogenDockBar"
+        android:requestLegacyExternalStorage="true">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".FloatingIconService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <receiver
+            android:name=".BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
+```
+
+## 文件: app/src/main/res/layout/activity_main.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="悬浮栏配置"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btn_config_nav"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择导航应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_config_music"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择音乐应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_config_phone"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择电话应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_config_settings"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="选择设置应用"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btn_restart_service"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="重启悬浮栏"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
+```
+
+## 文件: gradle/wrapper/gradle-wrapper.properties
+```properties
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-7.5-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+```
+
+================================================================================
+XML文件内容
+================================================================================
+
+## 文件: app/src/main/res/layout/floating_dockbar.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/dockbar_bg"
+    android:padding="8dp"
+    android:gravity="center">
+
+    <ImageButton
+        android:id="@+id/btn_nav"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@android:drawable/ic_menu_directions"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="导航"
+        android:layout_margin="4dp" />
+
+    <ImageButton
+        android:id="@+id/btn_music"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@android:drawable/ic_lock_silent_mode_off"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="音乐"
+        android:layout_margin="4dp" />
+
+    <ImageButton
+        android:id="@+id/btn_phone"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@android:drawable/ic_input_add"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="电话"
+        android:layout_margin="4dp" />
+
+    <ImageButton
+        android:id="@+id/btn_settings"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@android:drawable/ic_menu_preferences"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="设置"
+        android:layout_margin="4dp" />
+
+    <ImageButton
+        android:id="@+id/btn_app_manager"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@android:drawable/ic_menu_manage"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="应用管理"
+        android:layout_margin="4dp" />
+
+</LinearLayout>
+```
+
