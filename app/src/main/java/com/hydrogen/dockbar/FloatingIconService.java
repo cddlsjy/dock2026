@@ -30,22 +30,25 @@ public class FloatingIconService extends Service {
     private float initialY;
     private float initialTouchX;
     private float initialTouchY;
-    
+
+    private ViewTreeObserver.OnGlobalLayoutListener layoutListener;
     private boolean isHidden = false;
-    private int hiddenOffset = 0;
+    private boolean destroyed = false;
     private int originalX;
     private int originalY;
+    private int tabWidthPx;
+    private int windowType;
 
     private Handler autoHideHandler;
     private Runnable autoHideRunnable;
 
     private String[] defaultPackages = {
-            "",                              // 主页（空表示使用返回主页功能）
-            "com.google.android.apps.maps",  // 导航
-            "com.android.providers.downloads.ui", // 收音机（默认使用下载管理器）
-            "com.google.android.music",     // 音乐
-            "com.google.android.documentsui", // 文件管理
-            "com.android.settings"           // 设置
+            "",
+            "com.google.android.apps.maps",
+            "com.android.providers.downloads.ui",
+            "com.google.android.music",
+            "com.google.android.documentsui",
+            "com.android.settings"
     };
 
     @Override
@@ -57,6 +60,7 @@ public class FloatingIconService extends Service {
     public void onCreate() {
         super.onCreate();
         prefs = getSharedPreferences("dockbar_config", MODE_PRIVATE);
+        tabWidthPx = (int) (30 * getResources().getDisplayMetrics().density);
         autoHideHandler = new Handler(Looper.getMainLooper());
         autoHideRunnable = () -> {
             hideToNearestEdge();
@@ -77,7 +81,6 @@ public class FloatingIconService extends Service {
             windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
             floatingView = LayoutInflater.from(this).inflate(R.layout.floating_dockbar, null);
 
-            int windowType;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 windowType = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
             } else {
@@ -92,7 +95,7 @@ public class FloatingIconService extends Service {
                     PixelFormat.TRANSLUCENT);
 
             params.gravity = Gravity.LEFT | Gravity.TOP;
-            
+
             int savedX = prefs.getInt("dockbar_x", 0);
             int savedY = prefs.getInt("dockbar_y", getScreenHeight() / 2 - 200);
             params.x = savedX;
@@ -105,18 +108,21 @@ public class FloatingIconService extends Service {
             setupButtons();
             setupDragListener();
 
-            floatingView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            layoutListener = new ViewTreeObserver.OnGlobalLayoutListener() {
                 @Override
                 public void onGlobalLayout() {
                     if (floatingView.getWidth() > 0) {
-                        floatingView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                        String hideMode = getHideMode();
-                        if ("auto".equals(hideMode)) {
+                        floatingView.getViewTreeObserver().removeOnGlobalLayoutListener(layoutListener);
+                        String mode = getHideMode();
+                        Toast.makeText(FloatingIconService.this,
+                            "布局完成 模式=" + mode, Toast.LENGTH_SHORT).show();
+                        if ("auto".equals(mode)) {
                             resetAutoHideTimer();
                         }
                     }
                 }
-            });
+            };
+            floatingView.getViewTreeObserver().addOnGlobalLayoutListener(layoutListener);
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(this, "启动悬浮栏失败: " + e.getMessage(), Toast.LENGTH_LONG).show();
@@ -172,38 +178,70 @@ public class FloatingIconService extends Service {
         return prefs.getString("hide_mode", "auto");
     }
 
-    private boolean isManualMode() {
-        return "manual".equals(getHideMode());
-    }
-
     private void hideToNearestEdge() {
-        if (isHidden) return;
+        if (destroyed || isHidden) return;
 
         originalX = params.x;
         originalY = params.y;
 
-        if (floatingView.getWidth() == 0) {
-            autoHideHandler.postDelayed(this::hideToNearestEdge, 100);
+        int vw = floatingView.getWidth();
+        if (vw == 0) {
+            autoHideHandler.postDelayed(this::hideToNearestEdge, 200);
             return;
         }
 
         int screenWidth = getScreenWidth();
-        int viewWidth = floatingView.getWidth();
-
-        int tabWidth = (int) (15 * getResources().getDisplayMetrics().density);
-        hiddenOffset = viewWidth - tabWidth;
-
-        if (params.x < (screenWidth - viewWidth) / 2) {
-            hideFloatingView(true);
+        if (originalX < (screenWidth - vw) / 2) {
+            doHide(true);
         } else {
-            hideFloatingView(false);
+            doHide(false);
         }
     }
 
-    private void rehideAfterDelay(int ms) {
-        if (!"auto".equals(getHideMode())) return;
-        cancelAutoHide();
-        autoHideHandler.postDelayed(autoHideRunnable, ms);
+    private void doHide(boolean leftSide) {
+        if (destroyed || isHidden) return;
+        if (floatingView.getWidth() == 0) return;
+
+        isHidden = true;
+
+        try { windowManager.removeView(floatingView); } catch (Exception ignored) {}
+
+        params.width = tabWidthPx;
+        params.x = leftSide ? 0 : getScreenWidth() - tabWidthPx;
+        params.y = originalY;
+
+        floatingView.setBackgroundColor(0xCC0078D4);
+
+        try {
+            windowManager.addView(floatingView, params);
+            setupDragListener();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void doShow() {
+        if (destroyed || !isHidden) return;
+
+        try { windowManager.removeView(floatingView); } catch (Exception ignored) {}
+
+        params.width = WindowManager.LayoutParams.WRAP_CONTENT;
+        params.x = Math.max(0, Math.min(originalX, getScreenWidth() - tabWidthPx * 2));
+        params.y = Math.max(0, Math.min(originalY, getScreenHeight() - tabWidthPx * 2));
+
+        try {
+            windowManager.addView(floatingView, params);
+            setupDragListener();
+            applyThemeAndOpacity();
+            isHidden = false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this, "展开失败: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+
+        if ("auto".equals(getHideMode())) {
+            resetAutoHideTimer();
+        }
     }
 
     private void setupDragListener() {
@@ -215,23 +253,12 @@ public class FloatingIconService extends Service {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         cancelAutoHide();
+
                         if (isHidden) {
-                            float x = event.getRawX();
-                            float tabWidthPx = 15 * getResources().getDisplayMetrics().density;
-                            boolean inTabArea = false;
-                            if (params.x < 0 && x < tabWidthPx) {
-                                inTabArea = true;
-                            } else if (params.x > getScreenWidth() - tabWidthPx &&
-                                       x > getScreenWidth() - tabWidthPx) {
-                                inTabArea = true;
-                            }
-                            if (inTabArea) {
-                                showFloatingView();
-                                return false;
-                            } else {
-                                return true;
-                            }
+                            doShow();
+                            return false;
                         }
+
                         isDragging = false;
                         initialX = params.x;
                         initialY = params.y;
@@ -249,6 +276,7 @@ public class FloatingIconService extends Service {
                         }
 
                         if (isDragging) {
+                            params.width = WindowManager.LayoutParams.WRAP_CONTENT;
                             params.x = (int) (initialX + dx);
                             params.y = (int) (initialY + dy);
                             params.x = Math.max(0, Math.min(params.x, getScreenWidth() - floatingView.getWidth()));
@@ -264,20 +292,15 @@ public class FloatingIconService extends Service {
                             savePosition();
                             originalX = params.x;
                             originalY = params.y;
+
                             String hideMode = getHideMode();
-                            if ("auto".equals(hideMode)) {
-                                int screenWidth = getScreenWidth();
-                                int viewWidth = floatingView.getWidth();
-                                if (params.x <= 0 || params.x >= screenWidth - viewWidth) {
+                            if (!"none".equals(hideMode)) {
+                                boolean atEdge = params.x <= 0 ||
+                                    params.x >= getScreenWidth() - floatingView.getWidth();
+                                if (atEdge) {
                                     hideToNearestEdge();
-                                } else {
+                                } else if ("auto".equals(hideMode)) {
                                     resetAutoHideTimer();
-                                }
-                            } else if ("manual".equals(hideMode)) {
-                                int screenWidth = getScreenWidth();
-                                int viewWidth = floatingView.getWidth();
-                                if (params.x <= 0 || params.x >= screenWidth - viewWidth) {
-                                    hideToNearestEdge();
                                 }
                             }
                         } else {
@@ -314,50 +337,11 @@ public class FloatingIconService extends Service {
     private void resetAutoHideTimer() {
         if (!"auto".equals(getHideMode())) return;
         cancelAutoHide();
-        autoHideHandler.postDelayed(autoHideRunnable, 3000);
+        autoHideHandler.postDelayed(autoHideRunnable, 5000);
     }
 
     private void cancelAutoHide() {
         autoHideHandler.removeCallbacks(autoHideRunnable);
-    }
-
-    private void hideFloatingView(boolean leftSide) {
-        if (isHidden) {
-            return;
-        }
-        
-        if (floatingView.getWidth() == 0) {
-            return;
-        }
-
-        int tabWidth = (int) (15 * getResources().getDisplayMetrics().density);
-        hiddenOffset = floatingView.getWidth() - tabWidth;
-        
-        if (leftSide) {
-            params.x = -hiddenOffset;
-        } else {
-            params.x = getScreenWidth() - tabWidth;
-        }
-        windowManager.updateViewLayout(floatingView, params);
-        isHidden = true;
-    }
-
-    private void showFloatingView() {
-        if (!isHidden) {
-            return;
-        }
-
-        params.x = originalX;
-        params.y = originalY;
-        params.x = Math.max(0, Math.min(params.x, getScreenWidth() - floatingView.getWidth()));
-        params.y = Math.max(0, Math.min(params.y, getScreenHeight() - floatingView.getHeight()));
-
-        windowManager.updateViewLayout(floatingView, params);
-        isHidden = false;
-
-        if ("auto".equals(getHideMode())) {
-            resetAutoHideTimer();
-        }
     }
 
     private void savePosition() {
@@ -442,9 +426,10 @@ public class FloatingIconService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        destroyed = true;
         cancelAutoHide();
-        if (floatingView != null) {
-            windowManager.removeView(floatingView);
+        if (floatingView != null && windowManager != null) {
+            try { windowManager.removeView(floatingView); } catch (Exception ignored) {}
         }
         Toast.makeText(this, "悬浮栏已关闭", Toast.LENGTH_SHORT).show();
     }
