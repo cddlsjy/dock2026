@@ -124,6 +124,8 @@ public class FloatingIconService extends Service {
             params.width = iconSizePx;
             params.height = iconSizePx;
             button.setLayoutParams(params);
+            button.setScaleType(ImageButton.ScaleType.FIT_CENTER);
+            button.setPadding(iconSizePx / 10, iconSizePx / 10, iconSizePx / 10, iconSizePx / 10);
         }
     }
 
