@@ -144,19 +144,28 @@ public class FloatingIconService extends Service {
 
     private void setupDragListener() {
         floatingView.setOnTouchListener(new View.OnTouchListener() {
+            private boolean isAtLeftEdge = false;
+            private boolean isAtRightEdge = false;
+            
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         if (isHidden) {
                             showFloatingView();
+                            return true;
                         }
                         initialX = params.x;
                         initialY = params.y;
                         initialTouchX = event.getRawX();
                         initialTouchY = event.getRawY();
+                        isAtLeftEdge = params.x <= 0;
+                        isAtRightEdge = params.x >= getScreenWidth() - floatingView.getWidth();
                         return true;
                     case MotionEvent.ACTION_MOVE:
+                        if (isHidden) {
+                            return true;
+                        }
                         params.x = (int) (initialX + event.getRawX() - initialTouchX);
                         params.y = (int) (initialY + event.getRawY() - initialTouchY);
                         
@@ -166,8 +175,16 @@ public class FloatingIconService extends Service {
                         windowManager.updateViewLayout(floatingView, params);
                         return true;
                     case MotionEvent.ACTION_UP:
+                        if (isHidden) {
+                            return true;
+                        }
                         savePosition();
-                        autoHideToEdge();
+                        // 检查是否拖动到边缘位置
+                        if (isAtLeftEdge && params.x <= 0 && prefs.getBoolean("edge_hide", false)) {
+                            hideFloatingView(true);
+                        } else if (isAtRightEdge && params.x >= getScreenWidth() - floatingView.getWidth() && prefs.getBoolean("edge_hide", false)) {
+                            hideFloatingView(false);
+                        }
                         return true;
                 }
                 return false;
@@ -175,33 +192,19 @@ public class FloatingIconService extends Service {
         });
     }
 
-    private void autoHideToEdge() {
-        if (!prefs.getBoolean("edge_hide", false)) {
-            return;
-        }
-        
-        int centerX = params.x + floatingView.getWidth() / 2;
-        if (centerX < getScreenWidth() / 2) {
-            if (params.x > edgeThreshold) {
-                hideFloatingView(true);
-            }
-        } else {
-            if (params.x < getScreenWidth() - floatingView.getWidth() - edgeThreshold) {
-                hideFloatingView(false);
-            }
-        }
-    }
-
     private void hideFloatingView(boolean leftSide) {
         if (isHidden) {
             return;
         }
         
-        hiddenOffset = floatingView.getWidth() - 20;
+        // 只留一个15dp的小条
+        int tabWidth = (int) (15 * getResources().getDisplayMetrics().density);
+        hiddenOffset = floatingView.getWidth() - tabWidth;
+        
         if (leftSide) {
             params.x = -hiddenOffset;
         } else {
-            params.x = getScreenWidth() - 20;
+            params.x = getScreenWidth() - tabWidth;
         }
         windowManager.updateViewLayout(floatingView, params);
         isHidden = true;
